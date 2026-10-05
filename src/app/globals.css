@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #1f1b16;          /* testo principale, sfondi scuri */
+  --color-ink-soft: #4a443c;     /* testo secondario */
+  --color-paper: #faf7f2;        /* sfondo pagina */
+  --color-sand: #efe8dd;         /* sezioni alternate */
+  --color-stone: #d9cfc1;        /* bordi, divisori */
+  --color-bronze: #8a5a32;       /* accento e CTA primaria (contrasto AA con bianco) */
+  --color-bronze-dark: #6f4626;  /* hover CTA */
+  --color-sage: #6f7a64;         /* accento secondario, icone */
+  --color-whatsapp: #128c4a;     /* solo pulsante WhatsApp (verde scuro: contrasto AA con bianco) */
+
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  --radius-card: 1.25rem;
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  overflow-x: hidden;
+}
