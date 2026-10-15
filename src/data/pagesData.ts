@@ -2,24 +2,24 @@ import type { Feature, ComparisonRow } from "./types";
 
 export const homeCopy = {
   hero: {
-    eyebrow: "Studio di progettazione d'interni · Showroom di 2.000 mq a Scafati",
-    headline: "La tua casa non è standard. I tuoi mobili nemmeno.",
+    eyebrow: "Studio di progettazione sartoriale",
+    headline: "Qui la cucina non si sceglie. Si progetta su di te.",
     subheadline:
-      "Rilievo laser, render 3D fotorealistico e i migliori marchi della manifattura italiana, orchestrati da un unico interior designer. Cucine, zona notte, camerette e living cuciti sui tuoi spazi e sulla tua vita.",
+      "Ogni progetto Proggecta nasce da un rilievo laser e diventa un pezzo unico: il tuo. Un unico interior designer ti segue dal primo sopralluogo all'ultima regolazione dell'anta, con render 3D prima di ordinare e scocca in multistrato marino.",
     cta: {
-      label: "Prenota la tua consulenza gratuita in showroom",
-      href: "#prenota",
+      label: "Scopri il Metodo Sartoriale ↓",
+      href: "#metodo",
     },
     secondaryCta: {
       label: "Preferisci scriverci? WhatsApp →",
       href: "#whatsapp",
     },
-    microcopy: "Ti richiamiamo entro 24 ore lavorative per confermare giorno e orario.",
+    microcopy: "",
     chips: [
-      { icon: "Sparkles", label: "Consulenza e render 3D gratuiti, senza impegno" },
-      { icon: "UserRound", label: "Un interior designer dedicato solo a te" },
-      { icon: "ParkingCircle", label: "Parcheggio riservato in showroom" },
-      { icon: "Store", label: "2.000 mq di ambienti da toccare con mano" },
+      { icon: "Sparkles", label: "Consulenza e render 3D gratuiti" },
+      { icon: "Layers", label: "Scocca in multistrato" },
+      { icon: "UserRound", label: "Un interior designer dedicato" },
+      { icon: "Store", label: "Showroom a Nocera Inferiore" },
     ],
   },
   brandsStrip: {
@@ -46,17 +46,11 @@ export const homeCopy = {
     ],
   },
   showroom: {
-    eyebrow: "Showroom di Scafati",
-    title: "2.000 mq per smettere di immaginare e iniziare a toccare.",
-    body: "Le foto aiutano a sognare, ma una cucina si sceglie aprendo i cassetti, un divano sedendosi, un armadio toccando le ante. Nel nostro showroom trovi ambienti completi allestiti, campionari di materiali, top e finiture, e un'area progettazione dove vedere il tuo render su grande schermo.",
-    highlights: [
-      "Ambienti completi: cucine, living, zona notte, camerette",
-      "Campionari di top, ante, essenze e tessuti da confrontare",
-      "Un interior designer dedicato, senza attese, se prenoti",
-      "Parcheggio riservato e un caffè ad accoglierti",
-    ],
+    eyebrow: "Showroom & Materioteca",
+    title: "Vieni a toccare con mano ciò che un catalogo non mostra.",
+    body: "Una cucina non si sceglie su uno schermo: si giudica dalla tenuta della scocca in multistrato, dalla solidità delle cerniere e dalla sensazione tattile delle superfici. Nello showroom Proggecta tocchi dal vivo le sezioni costruttive, accosti marmi e legni nella materioteca e definisci ogni dettaglio con chi il mobile lo progetta davvero.",
     cta: {
-      label: "Prenota la tua visita",
+      label: "Prenota la tua visita in showroom",
       href: "#prenota",
     },
   },
@@ -92,7 +86,7 @@ export const homeCopy = {
 
 export const progettazioneCopy = {
   seo: {
-    title: "Progettazione Sartoriale d'Interni a Scafati | Proggecta",
+    title: "Progettazione Sartoriale d'Interni a Nocera Inferiore | Proggecta",
     description:
       "Progettiamo cucine, armadi e camerette al millimetro: rilievo laser, render 3D fotorealistico e soluzioni per pilastri, nicchie e mansarde. Consulenza gratuita.",
   },
@@ -311,15 +305,15 @@ export const contractCopy = {
 
 export const showroomCopy = {
   seo: {
-    title: "Showroom Arredamento a Scafati (SA) | Orari e Contatti | Proggecta",
+    title: "Showroom Arredamento a Nocera Inferiore (SA) | Orari e Contatti | Proggecta",
     description:
-      "2.000 mq di showroom a Scafati: cucine, zona notte, camerette e living. Parcheggio riservato. Prenota la tua consulenza gratuita o scrivici su WhatsApp.",
+      "Lo showroom Proggecta a Nocera Inferiore: cucine, zona notte, camerette e living. Parcheggio riservato. Prenota la tua consulenza gratuita o scrivici su WhatsApp.",
   },
   hero: {
-    eyebrow: "Showroom Proggecta · Scafati (SA)",
-    headline: "Ti aspettiamo a Scafati. Il caffè lo offriamo noi.",
+    eyebrow: "Showroom Proggecta · Nocera Inferiore (SA)",
+    headline: "Ti aspettiamo a Nocera Inferiore. Il caffè lo offriamo noi.",
     subheadline:
-      "2.000 mq di ambienti da vivere, un interior designer dedicato e tutto il tempo che ti serve per scegliere con calma.",
+      "Ambienti curati da vivere, campionari materici completi, un interior designer dedicato e tutto il tempo che ti serve per scegliere con calma.",
     cta: {
       label: "Prenota la visita",
       href: "#prenota",
@@ -356,8 +350,8 @@ export const showroomCopy = {
   ],
   location: {
     parking: "Ampio parcheggio privato riservato ai clienti all'interno della struttura.",
-    directions: "Facilmente raggiungibile dall'uscita autostradale A3 Scafati/Pompei.",
+    directions: "Zona industriale Fosso Imperatore (Lotto 14), facilmente raggiungibile dall'uscita autostradale A3 Nocera Inferiore o A30 Nocera-Pagani.",
     localSeoText:
-      "Siamo a Scafati, nel cuore dell'Agro Nocerino-Sarnese, a pochi minuti da Pompei, Angri, Sant'Antonio Abate, San Marzano sul Sarno, Poggiomarino, Boscoreale, Sarno, Nocera Inferiore, Nocera Superiore, Pagani, Castellammare di Stabia e Torre Annunziata.",
+      "Siamo a Nocera Inferiore (Località Fosso Imperatore – Lotto 14), nel cuore dell'Agro Nocerino-Sarnese, a pochi minuti da Nocera Superiore, Pagani, Cava de' Tirreni, Angri, Scafati, Pompei, San Valentino Torio, Sarno, Salerno e Napoli.",
   },
 };

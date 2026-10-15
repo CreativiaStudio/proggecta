@@ -12,10 +12,10 @@ export const siteConfig = {
   locale: "it_IT",
 
   address: {
-    street: "[DA COMPILARE — via e numero civico]",
-    city: "Scafati",
+    street: "Località Fosso Imperatore – Lotto 14",
+    city: "Nocera Inferiore",
     province: "SA",
-    postalCode: "84018",
+    postalCode: "84014",
     country: "IT",
     // Coordinate esatte dello showroom (servono per JSON-LD e link mappe)
     lat: 0,
@@ -24,9 +24,9 @@ export const siteConfig = {
   },
 
   showroom: {
-    sizeSqm: 2000,
-    parking: "[DA COMPILARE — es. Parcheggio privato riservato ai clienti, N posti]",
-    directions: "[DA COMPILARE — es. A pochi minuti dall'uscita autostradale …]",
+    sizeSqm: 600,
+    parking: "Parcheggio privato riservato ai clienti",
+    directions: "Località Fosso Imperatore (Lotto 14), a pochi minuti dall'uscita autostradale",
   },
 
   contacts: {
@@ -34,7 +34,7 @@ export const siteConfig = {
     phoneHref: "tel:+39XXXXXXXXXX",
     whatsapp: "39XXXXXXXXXX", // solo cifre, prefisso incluso, senza "+"
     whatsappDefaultMessage:
-      "Ciao Proggecta, vorrei prenotare una consulenza in showroom a Scafati.",
+      "Ciao Proggecta, vorrei prenotare una consulenza in showroom a Nocera Inferiore.",
     email: "info@proggecta.it",
     emailContract: "info@proggecta.it",
   },
@@ -86,11 +86,73 @@ export const siteConfig = {
     { label: "Progettazione", href: "/progettazione-sartoriale" },
     { label: "Qualità costruttiva", href: "/qualita-costruttiva" },
     { label: "Marchi", href: "/#marchi" },
-    { label: "Contract", href: "/contract" },
-    { label: "Showroom", href: "/showroom-contatti" },
+    { label: "Contatti", href: "/contatti" },
   ],
 
-  primaryCta: { label: "Prenota la consulenza gratuita", href: "#prenota" },
+  primaryCta: { label: "Prenota la consulenza gratuita", href: "/contatti" },
 } as const;
 
 export type SiteConfig = typeof siteConfig;
+
+/** Voce del mega menu "Marchi" nell'header (loghi in /public/media/logos). */
+export interface NavBrand {
+  name: string;
+  /** Pagina del marchio */
+  href: string;
+  /** Uno o più loghi vettoriali da /media/logos (es. Smeg & Electrolux) */
+  logos: string[];
+  /** Comparto mostrato sotto il nome del marchio */
+  compartment: string;
+}
+
+/** Elenco completo dei marchi partner mostrato nel mega menu dell'header. */
+export const navBrands: NavBrand[] = [
+  {
+    name: "Ciesse Cucine",
+    href: "/brand/ciesse",
+    logos: ["/media/logos/ciesse.svg"],
+    compartment: "Cucine sartoriali",
+  },
+  {
+    name: "Moretti Compact",
+    href: "/brand/moretti-compact",
+    logos: ["/media/logos/moretti-compact.png"],
+    compartment: "Camerette e cabine",
+  },
+  {
+    name: "Mercantini",
+    href: "/brand/mercantini",
+    logos: ["/media/logos/mercantini.svg"],
+    compartment: "Armadi e zona notte",
+  },
+  {
+    name: "Zamagna",
+    href: "/brand/zamagna",
+    logos: ["/media/logos/zamagna.svg"],
+    compartment: "Tavoli, sedie e living",
+  },
+  {
+    name: "Signorini & Coco",
+    href: "/brand/signorini-coco",
+    logos: ["/media/logos/signorini-coco.svg"],
+    compartment: "Arredo d'arte",
+  },
+  {
+    name: "Ferretti e Ferretti",
+    href: "/brand/ferretti-ferretti",
+    logos: ["/media/logos/ferretti-ferretti.svg"],
+    compartment: "Falegnameria sartoriale",
+  },
+  {
+    name: "Smeg & Electrolux",
+    href: "/brand/elettrodomestici",
+    logos: ["/media/logos/smeg.svg", "/media/logos/electrolux.svg"],
+    compartment: "Elettrodomestici",
+  },
+  {
+    name: "Poziello & Riccardi",
+    href: "/brand/materiali-pannelli",
+    logos: ["/media/logos/poziello-riccardi.svg"],
+    compartment: "Materiali e pannelli",
+  },
+];

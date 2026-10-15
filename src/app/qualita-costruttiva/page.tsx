@@ -33,6 +33,12 @@ export default function QualitaCostruttivaPage() {
         headline={qualitaCopy.hero.headline}
         subheadline={qualitaCopy.hero.subheadline}
         cta={qualitaCopy.hero.cta}
+        image={{
+          src: "/media/qualita/hero-anta-legno-essenza.jpg",
+          alt: "Dettaglio ante in legno ed essenze sartoriali Ciesse Cucine",
+          width: 1920,
+          height: 1080,
+        }}
       />
 
       {/* Sezione 1: Manifesto della Qualità */}

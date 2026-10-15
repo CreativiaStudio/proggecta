@@ -2,8 +2,8 @@ import type { ProcessStep } from "./types";
 
 export const processIntro = {
   eyebrow: "Il Metodo Proggecta",
-  title: "Dal primo caffè all'ultima vite, un solo metodo. Nessuna sorpresa.",
-  body: "Ogni progetto segue gli stessi quattro passaggi, sempre con lo stesso interior designer. Sai cosa succede, quando succede e cosa riceverai prima di firmare.",
+  title: "Dal rilievo laser alla posa finale: quattro fasi di rigore progettuale.",
+  body: "Ogni progetto segue quattro passaggi con lo stesso interior designer dedicato. Misure al millimetro, scelte materiche in showroom ed esecuzione su misura prima di andare in produzione.",
 };
 
 export const processStepsData: ProcessStep[] = [

@@ -18,12 +18,12 @@ export const ambientiData: AmbienteLanding[] = [
     slug: "cucine-su-misura",
     ambiente: "cucina",
     seo: {
-      title: "Cucine su Misura a Scafati | Render 3D Gratuito | Proggecta",
+      title: "Cucine su Misura a Nocera Inferiore | Render 3D Gratuito | Proggecta",
       description:
-        "Cucine su misura progettate al millimetro: rilievo laser, render 3D gratuito, casse in multistrato e montaggio interno. Showroom di 2.000 mq a Scafati.",
+        "Cucine su misura progettate al millimetro: rilievo laser, render 3D gratuito, casse in multistrato e montaggio interno. Showroom a Nocera Inferiore.",
     },
     hero: {
-      eyebrow: "Cucine su misura · Showroom 2.000 mq a Scafati",
+      eyebrow: "Cucine su misura · Showroom a Nocera Inferiore",
       headline: "Cucine su misura, progettate al millimetro sulla tua casa.",
       subheadline:
         "Rilievo laser, render 3D fotorealistico prima dell'ordine e casse in multistrato che non temono l'acqua. Vieni a toccarle con mano: la consulenza è gratuita.",
@@ -41,12 +41,12 @@ export const ambientiData: AmbienteLanding[] = [
     slug: "camerette",
     ambiente: "cameretta",
     seo: {
-      title: "Camerette su Misura a Scafati | Moretti Compact | Proggecta",
+      title: "Camerette su Misura a Nocera Inferiore | Moretti Compact | Proggecta",
       description:
-        "Camerette evolutive e salvaspazio progettate sulla stanza reale dei tuoi figli. Rilievo laser e render 3D gratuito nello showroom Proggecta di Scafati.",
+        "Camerette evolutive e salvaspazio progettate sulla stanza reale dei tuoi figli. Rilievo laser e render 3D gratuito nello showroom Proggecta di Nocera Inferiore.",
     },
     hero: {
-      eyebrow: "Camerette · Showroom 2.000 mq a Scafati",
+      eyebrow: "Camerette · Showroom a Nocera Inferiore",
       headline: "Camerette che crescono con i tuoi figli, progettate sulla loro stanza.",
       subheadline:
         "Soluzioni salvaspazio e composizioni evolutive Moretti Compact, disegnate sulle misure reali della stanza. Le vedi in 3D, con i tuoi figli, prima dell'ordine.",
@@ -64,12 +64,12 @@ export const ambientiData: AmbienteLanding[] = [
     slug: "armadi-cabine-armadio",
     ambiente: "notte",
     seo: {
-      title: "Armadi e Cabine Armadio su Misura a Scafati | Proggecta",
+      title: "Armadi e Cabine Armadio su Misura a Nocera Inferiore | Proggecta",
       description:
-        "Armadi battenti, scorrevoli e cabine armadio su misura: rilievo laser, attrezzature interne personalizzate e render 3D gratuito. Showroom Proggecta, Scafati.",
+        "Armadi battenti, scorrevoli e cabine armadio su misura: rilievo laser, attrezzature interne personalizzate e render 3D gratuito. Showroom Proggecta, Nocera Inferiore.",
     },
     hero: {
-      eyebrow: "Armadi e zona notte · Showroom 2.000 mq a Scafati",
+      eyebrow: "Armadi e zona notte · Showroom a Nocera Inferiore",
       headline: "Armadi e cabine armadio che occupano esattamente lo spazio che hai.",
       subheadline:
         "Dal pavimento al soffitto, da parete a parete, anche sotto il tetto inclinato. Sistemi Mercantini e Moretti Compact progettati al millimetro e organizzati su cosa devi contenere.",
@@ -87,12 +87,12 @@ export const ambientiData: AmbienteLanding[] = [
     slug: "arredamento-casa-completa",
     ambiente: "completo",
     seo: {
-      title: "Arredamento Casa Completa su Misura a Scafati | Proggecta",
+      title: "Arredamento Casa Completa su Misura a Nocera Inferiore | Proggecta",
       description:
-        "Arreda tutta casa con un solo interior designer: cucina, living, zona notte e camerette dai migliori marchi italiani. Showroom 2.000 mq a Scafati.",
+        "Arreda tutta casa con un solo interior designer: cucina, living, zona notte e camerette dai migliori marchi italiani. Showroom a Nocera Inferiore.",
     },
     hero: {
-      eyebrow: "Casa nuova o ristrutturazione · Showroom 2.000 mq a Scafati",
+      eyebrow: "Casa nuova o ristrutturazione · Showroom a Nocera Inferiore",
       headline: "Tutta la casa, un solo progetto. Un solo interlocutore.",
       subheadline:
         "Cucina, living, zona notte e camerette scelti tra i migliori marchi italiani e progettati insieme da un unico interior designer. Niente cinque negozi, niente stili che non si parlano.",

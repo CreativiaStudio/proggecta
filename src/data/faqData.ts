@@ -110,9 +110,9 @@ export const faqData: FaqItem[] = [
   {
     id: "zone-servite",
     category: "servizio",
-    question: "Lavorate solo a Scafati?",
+    question: "Lavorate solo a Nocera Inferiore?",
     answer:
-      "Lo showroom è a Scafati, ma progettiamo e montiamo in tutta l'area tra Napoli e Salerno: Pompei, Angri, Sarno, Nocera, Castellammare, Torre Annunziata, Agro Nocerino-Sarnese, Penisola Sorrentina e Costiera. Per progetti fuori zona e per il settore contract, contattaci e valutiamo insieme.",
+      "Lo showroom è a Nocera Inferiore (Località Fosso Imperatore), ma progettiamo e montiamo in tutta l'area tra Napoli e Salerno: Pompei, Angri, Sarno, Nocera, Castellammare, Torre Annunziata, Agro Nocerino-Sarnese, Penisola Sorrentina e Costiera. Per progetti fuori zona e per il settore contract, contattaci e valutiamo insieme.",
   },
   {
     id: "garanzia",
@@ -144,7 +144,7 @@ export const faqData: FaqItem[] = [
     category: "ciesse",
     question: "Proggecta e Ciesse Home sono la stessa azienda?",
     answer:
-      "No. Proggecta è uno studio di progettazione d'interni indipendente, con un proprio team e una propria selezione di marchi. Tra i marchi che puoi trovare nel nostro showroom di Scafati c'è anche la gamma di cucine Ciesse.",
+      "No. Proggecta è uno studio di progettazione d'interni indipendente, con un proprio team e una propria selezione di marchi. Tra i marchi che puoi trovare nel nostro showroom di Nocera Inferiore c'è anche la gamma di cucine Ciesse.",
   },
   {
     id: "ciesse-pratiche",

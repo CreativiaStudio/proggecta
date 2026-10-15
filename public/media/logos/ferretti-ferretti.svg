@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80" fill="none">
+  <!-- Monogramma Ferretti e Ferretti: quadrato scuro con FF specchiate -->
+  <g transform="translate(10, 16)">
+    <rect width="48" height="48" rx="4" fill="#2b2824"/>
+    <!-- F sinistra (specchiata) -->
+    <path d="M22 14 H12 V34 H15 V25 H21 V22 H15 V17 H22 V14 Z" fill="#faf7f2"/>
+    <!-- F destra (normale) -->
+    <path d="M26 14 H36 V17 H29 V22 H35 V25 H29 V34 H26 V14 Z" fill="#faf7f2"/>
+  </g>
+
+  <!-- Tipografia Ferretti e Ferretti -->
+  <text x="72" y="47" font-family="'Cinzel', 'Playfair Display', 'Times New Roman', serif" font-size="21" font-weight="600" fill="#1f1b16" letter-spacing="1.5">
+    Ferretti <tspan font-family="'Playfair Display', 'Baskerville', serif" font-style="italic" font-weight="400" font-size="18" fill="#8a5a32">e</tspan> Ferretti
+  </text>
+  <text x="74" y="61" font-family="'Montserrat', sans-serif" font-size="7.5" font-weight="600" fill="#6f7a64" letter-spacing="3.2">
+    FALEGNAMERIA SU MISURA
+  </text>
+</svg>

@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { Icon } from "@/components/ui/Icon";
-import { Check, X, ArrowRight, Droplets } from "lucide-react";
+import { Check, X, ArrowRight } from "lucide-react";
 
 export function QualityComparison() {
   const topFeatures = featuresData.filter((f) =>
@@ -124,24 +124,6 @@ export function QualityComparison() {
             </Reveal>
           ))}
         </div>
-
-        {/* Box Esperienza Showroom: Prova dell'acqua */}
-        <Reveal delay={0.4}>
-          <div className="bg-gradient-to-r from-[#2a241e] via-[#342e26] to-[#2a241e] rounded-2xl p-6 sm:p-8 border border-[#8a5a32]/40 max-w-3xl mx-auto mb-12 flex flex-col sm:flex-row items-center gap-6">
-            <div className="w-14 h-14 rounded-2xl bg-[#8a5a32]/30 text-[#8a5a32] flex items-center justify-center shrink-0 border border-[#8a5a32]/50">
-              <Droplets className="w-7 h-7 text-[#d9cfc1]" />
-            </div>
-            <div>
-              <h5 className="font-serif text-lg text-white font-medium mb-1">
-                La prova dell'acqua in Showroom
-              </h5>
-              <p className="text-xs sm:text-sm text-[#d9cfc1] leading-relaxed">
-                In showroom a Scafati ti mostriamo i due pannelli dopo giorni immersi nell'acqua.
-                Tocchi con mano la differenza tra una scocca integra e una sbriciolata.
-              </p>
-            </div>
-          </div>
-        </Reveal>
 
         {/* CTA finale sezione qualità */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center">

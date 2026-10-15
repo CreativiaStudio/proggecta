@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Progettiamo e realizziamo cucine, armadiature, camerette e living su misura a Scafati con i migliori marchi italiani. Showroom di 2.000 mq. Rilievo laser e render 3D.",
+    "Progettiamo e realizziamo cucine, armadiature, camerette e living su misura a Nocera Inferiore con i migliori marchi italiani. Showroom di 2.000 mq. Rilievo laser e render 3D.",
   openGraph: {
     type: "website",
     locale: "it_IT",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: "Proggecta | Progettazione Sartoriale d'Interni a Scafati",
+    title: "Proggecta | Progettazione Sartoriale d'Interni a Nocera Inferiore",
     description:
       "La tua casa non è standard. I tuoi mobili nemmeno. Progettiamo spazi su misura con cassa in multistrato e selezione multi-brand.",
   },

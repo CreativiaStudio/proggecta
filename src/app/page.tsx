@@ -5,7 +5,7 @@ import { getFaqs, homeFaqIds } from "@/data/faqData";
 import { Hero } from "@/components/sections/Hero";
 import { LogoStrip } from "@/components/sections/LogoStrip";
 import { ProblemSection } from "@/components/sections/ProblemSection";
-import { BrandGrid } from "@/components/sections/BrandGrid";
+import { SolutionsGallery } from "@/components/sections/SolutionsGallery";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { QualityComparison } from "@/components/sections/QualityComparison";
 import { ShowroomExperience } from "@/components/sections/ShowroomExperience";
@@ -20,31 +20,50 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 export default function HomePage() {
   const homeFaqs = getFaqs(homeFaqIds);
 
-  // Asset immagine Hero (cucina con isola sartoriale di pregio)
-  const heroImage = {
-    src: "/media/brand/ciesse/hero.jpg",
-    alt: "Cucina sartoriale con isola in gres e legno scuro",
-    width: 2560,
-    height: 1440,
-    credit: "© Proggecta Showroom Scafati",
-  };
+  // Sequenza di 4 ambienti di design per la Hero cinematografica
+  const heroImages = [
+    {
+      src: "/media/hero/hero-1.jpg",
+      alt: "Cucina sartoriale con isola in marmo scuro cannettato",
+      width: 2560,
+      height: 1440,
+    },
+    {
+      src: "/media/hero/hero-2.jpg",
+      alt: "Living open space con cucina sartoriale e tavolo di design",
+      width: 2560,
+      height: 1440,
+    },
+    {
+      src: "/media/hero/hero-3.jpg",
+      alt: "Prospettiva living contemporaneo su cucina e terrazzo panoramico",
+      width: 2560,
+      height: 1440,
+    },
+    {
+      src: "/media/hero/hero-4.jpg",
+      alt: "Cucina sartoriale con cantina vini a vista e isola scultorea",
+      width: 2560,
+      height: 1440,
+    },
+  ];
 
   return (
     <>
-      {/* 2.1 Hero Section ad alto impatto */}
+      {/* 2.1 Hero Section ad alto impatto con slideshow cinematografico */}
       <Hero
         eyebrow={homeCopy.hero.eyebrow}
         headline={homeCopy.hero.headline}
         subheadline={homeCopy.hero.subheadline}
-        image={heroImage}
-        cta={homeCopy.hero.cta}
-        secondaryCta={homeCopy.hero.secondaryCta}
-        microcopy={homeCopy.hero.microcopy}
+        image={heroImages[0]}
+        images={heroImages}
         chips={homeCopy.hero.chips}
       />
 
       {/* 2.2 Striscia Marchi */}
-      <LogoStrip brands={brandData} label={homeCopy.brandsStrip.label} />
+      <div id="marchi" className="scroll-mt-20">
+        <LogoStrip brands={brandData} label={homeCopy.brandsStrip.label} />
+      </div>
 
       {/* 2.3 Il Problema del Mobile Standard */}
       <ProblemSection
@@ -54,8 +73,8 @@ export default function HomePage() {
         bridge={homeCopy.problem.bridge}
       />
 
-      {/* 2.4 Multi-Brand Grid */}
-      <BrandGrid brands={brandData} />
+      {/* 2.4 Galleria fotografica delle soluzioni d'arredo */}
+      <SolutionsGallery />
 
       {/* 2.5 Il Metodo Sartoriale in 4 Step */}
       <ProcessSteps steps={processStepsData} variant="compact" />
@@ -68,7 +87,6 @@ export default function HomePage() {
         eyebrow={homeCopy.showroom.eyebrow}
         title={homeCopy.showroom.title}
         body={homeCopy.showroom.body}
-        highlights={homeCopy.showroom.highlights}
         cta={homeCopy.showroom.cta}
       />
 

@@ -10,7 +10,7 @@ export function Footer() {
   return (
     <footer className="bg-[#1f1b16] text-[#faf7f2] pt-20 pb-28 sm:pb-16 border-t border-[#4a443c]/40">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-16 border-b border-[#4a443c]/60">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 pb-12">
           {/* Colonna 1: Brand & Posizionamento */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -32,7 +32,7 @@ export function Footer() {
           {/* Colonna 2: Showroom & Orari */}
           <div>
             <h3 className="font-serif text-lg font-medium text-white mb-4">
-              Showroom di Scafati
+              Showroom & Materioteca
             </h3>
             <ul className="space-y-3 text-sm text-[#d9cfc1]">
               <li className="flex items-start gap-3">
@@ -69,22 +69,36 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Colonna 3: Pagine & Percorsi */}
+          {/* Colonna 3: Pagine & Servizi */}
           <div>
             <h3 className="font-serif text-lg font-medium text-white mb-4">
               Pagine & Servizi
             </h3>
             <ul className="space-y-2 text-sm text-[#d9cfc1]">
-              {siteConfig.nav.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="hover:text-white transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/progettazione-sartoriale"
+                  className="hover:text-white transition-colors"
+                >
+                  Progettazione sartoriale
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/qualita-costruttiva"
+                  className="hover:text-white transition-colors"
+                >
+                  Qualità costruttiva
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/#marchi"
+                  className="hover:text-white transition-colors"
+                >
+                  I nostri marchi
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/ambienti/cucine-su-misura"
@@ -111,29 +125,36 @@ export function Footer() {
               </li>
             </ul>
           </div>
+        </div>
 
-          {/* Colonna 4: Selezione Marchi */}
-          <div>
-            <h3 className="font-serif text-lg font-medium text-white mb-4">
-              I Nostri Marchi
-            </h3>
-            <ul className="space-y-2 text-sm text-[#d9cfc1]">
-              {brandData
-                .filter((b) => b.showInGrid)
-                .map((b) => (
-                  <li key={b.slug}>
-                    <Link
-                      href={`/brand/${b.slug}`}
-                      className="hover:text-white transition-colors flex items-center justify-between"
-                    >
-                      <span>{b.name}</span>
-                      <span className="text-[11px] text-[#a3af97]">
-                        {b.category}
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-            </ul>
+        {/* Fascia Orizzontale Loghi Partner (Solo loghi in orizzontale) */}
+        <div className="py-8 border-t border-[#4a443c]/60">
+          <div className="flex flex-wrap items-center justify-between sm:justify-around gap-6 sm:gap-8">
+            {[
+              { name: "Ciesse Cucine", href: "/brand/ciesse", src: "/media/logos/ciesse.svg" },
+              { name: "Moretti Compact", href: "/brand/moretti-compact", src: "/media/logos/moretti-compact.png" },
+              { name: "Mercantini", href: "/brand/mercantini", src: "/media/logos/mercantini.svg" },
+              { name: "Zamagna", href: "/brand/zamagna", src: "/media/logos/zamagna.svg" },
+              { name: "Signorini & Coco", href: "/brand/signorini-coco", src: "/media/logos/signorini-coco.svg" },
+              { name: "Ferretti e Ferretti", href: "/brand/ferretti-ferretti", src: "/media/logos/ferretti-ferretti.svg" },
+              { name: "Smeg", href: "/brand/elettrodomestici", src: "/media/logos/smeg.svg" },
+              { name: "Electrolux", href: "/brand/elettrodomestici", src: "/media/logos/electrolux.svg" },
+              { name: "Poziello & Riccardi", href: "/brand/materiali-pannelli", src: "/media/logos/poziello-riccardi.svg" },
+            ].map((brand) => (
+              <Link
+                key={brand.name}
+                href={brand.href}
+                title={brand.name}
+                className="opacity-55 hover:opacity-100 transition-opacity duration-200 py-1"
+              >
+                <img
+                  src={brand.src}
+                  alt={brand.name}
+                  className="h-5 sm:h-6 max-w-[100px] w-auto object-contain brightness-0 invert"
+                  loading="lazy"
+                />
+              </Link>
+            ))}
           </div>
         </div>
 

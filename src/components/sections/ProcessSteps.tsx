@@ -19,8 +19,8 @@ export function ProcessSteps({
   steps,
   variant = "compact",
   eyebrow = "Il nostro metodo sartoriale",
-  title = "Dal primo caffè all'ultima vite, un solo metodo. Nessuna sorpresa.",
-  subtitle = "Abbiamo standardizzato l'eccellenza per lasciarti solo il piacere di veder nascere la tua nuova casa.",
+  title = "Dal rilievo laser alla posa finale: quattro fasi di rigore progettuale.",
+  subtitle = "Architettura d'interni su misura: un unico progettista coordina volumi, materiali e installazione.",
 }: ProcessStepsProps) {
   return (
     <section className="py-20 sm:py-32 bg-[#faf7f2] border-b border-[#efe8dd]">

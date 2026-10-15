@@ -108,6 +108,7 @@ export interface Brand {
   };
   sections: ContentSection[];
   highlights: string[];
+  gallery?: ImageAsset[];
   /** Slug di altri brand da proporre in "Completa il progetto" */
   crossBrands: string[];
   /** id da faqData */

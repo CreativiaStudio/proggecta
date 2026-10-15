@@ -37,7 +37,7 @@ export function BookingForm({ preset = "cucina", source = "general" }: BookingFo
   // Form State
   const [ambiente, setAmbiente] = useState<Ambiente>(preset);
   const [preferredDate, setPreferredDate] = useState("flessibile");
-  const [preferredSlot, setPreferredSlot] = useState<"mattina" | "pomeriggio">("pomeriggio");
+  const [preferredSlot, setPreferredSlot] = useState<string>("pomeriggio");
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -258,33 +258,40 @@ export function BookingForm({ preset = "cucina", source = "general" }: BookingFo
           {/* Fascia Oraria */}
           <div className="mb-8">
             <label className="block text-xs font-semibold uppercase tracking-wider text-[#6f7a64] mb-3">
-              Fascia oraria
+              Fascia oraria preferita
             </label>
-            <div className="grid grid-cols-2 gap-3">
-              <button
-                type="button"
-                onClick={() => setPreferredSlot("mattina")}
-                className={cn(
-                  "p-3.5 rounded-xl border font-medium text-sm transition-all cursor-pointer text-center",
-                  preferredSlot === "mattina"
-                    ? "bg-[#8a5a32] text-white border-[#8a5a32] shadow-xs"
-                    : "bg-white text-[#1f1b16] border-[#d9cfc1] hover:bg-[#faf7f2]"
-                )}
-              >
-                Mattina (09:00 – 13:00)
-              </button>
-              <button
-                type="button"
-                onClick={() => setPreferredSlot("pomeriggio")}
-                className={cn(
-                  "p-3.5 rounded-xl border font-medium text-sm transition-all cursor-pointer text-center",
-                  preferredSlot === "pomeriggio"
-                    ? "bg-[#8a5a32] text-white border-[#8a5a32] shadow-xs"
-                    : "bg-white text-[#1f1b16] border-[#d9cfc1] hover:bg-[#faf7f2]"
-                )}
-              >
-                Pomeriggio (15:30 – 19:30)
-              </button>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              {[
+                { id: "09:30 - 11:00", label: "09:30 – 11:00", note: "Prima mattina" },
+                { id: "11:00 - 12:30", label: "11:00 – 12:30", note: "Tarda mattina" },
+                { id: "15:30 - 17:30", label: "15:30 – 17:30", note: "Primo pomeriggio" },
+                { id: "17:30 - 19:30", label: "17:30 – 19:30", note: "Tardo pomeriggio" },
+              ].map((slot) => {
+                const isSelected = preferredSlot === slot.id || (preferredSlot === "pomeriggio" && slot.id === "15:30 - 17:30") || (preferredSlot === "mattina" && slot.id === "09:30 - 11:00");
+                return (
+                  <button
+                    key={slot.id}
+                    type="button"
+                    onClick={() => setPreferredSlot(slot.id)}
+                    className={cn(
+                      "p-3 rounded-xl border font-medium text-xs sm:text-sm transition-all cursor-pointer text-center flex flex-col items-center justify-center gap-0.5",
+                      isSelected
+                        ? "bg-[#8a5a32] text-white border-[#8a5a32] shadow-xs"
+                        : "bg-white text-[#1f1b16] border-[#d9cfc1] hover:bg-[#faf7f2] hover:border-[#8a5a32]/40"
+                    )}
+                  >
+                    <span className="font-semibold">{slot.label}</span>
+                    <span
+                      className={cn(
+                        "text-[10px]",
+                        isSelected ? "text-white/80" : "text-[#6f7a64]"
+                      )}
+                    >
+                      {slot.note}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
