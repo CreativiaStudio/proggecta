@@ -138,6 +138,91 @@ export const solutionsGalleryData: SolutionItem[] = [
     },
     featured: false,
   },
+  {
+    id: "cucina-showroom-isola-cemento",
+    title: "Isola contemporanea e colonne attrezzate in showroom",
+    category: "cucine",
+    categoryLabel: "Cucine sartoriali",
+    description:
+      "Allestimento reale nello showroom di Nocera Inferiore: isola scultorea con piano in gres porcellanato ad alta resistenza e scocca in multistrato marino. Vani a giorno e colonne a scomparsa con cerniere ammortizzate testate.",
+    tags: ["Showroom dal vivo", "Isola scultorea", "Top in gres", "Scocca multistrato"],
+    image: {
+      src: "/media/showroom/showroom-3.jpg",
+      alt: "Cucina sartoriale allestita dal vivo nello showroom Proggecta a Nocera Inferiore",
+      width: 1600,
+      height: 1067,
+      credit: PROGGECTA,
+    },
+    featured: true,
+  },
+  {
+    id: "cucina-showroom-lineare-rovere",
+    title: "Composizione lineare con ante a telaio in legno",
+    category: "cucine",
+    categoryLabel: "Cucine sartoriali",
+    description:
+      "Allestimento dal vivo: calore del rovere naturale con ante a telaio artigianali e piani continui in quarzo. Meccanismi di chiusura Blum a scomparsa totale e vani illuminati a LED integrati nei canali.",
+    tags: ["Showroom dal vivo", "Rovere massello", "Ante a telaio", "Multistrato"],
+    image: {
+      src: "/media/showroom/showroom-6.jpg",
+      alt: "Cucina lineare in rovere con ante a telaio esposta nello showroom Proggecta",
+      width: 1600,
+      height: 1066,
+      credit: PROGGECTA,
+    },
+    featured: false,
+  },
+  {
+    id: "cucina-showroom-dettaglio-quarzo",
+    title: "Dettaglio costruttivo piano lavoro e giunzioni al millimetro",
+    category: "cucine",
+    categoryLabel: "Cucine sartoriali",
+    description:
+      "La qualità sartoriale si tocca con mano: taglio laser a 45 gradi sul top in gres, lavello sottotop integrato e scocca resistente all'umidità. Il tipo di dettaglio che nessun catalogo standard può garantire.",
+    tags: ["Showroom dal vivo", "Top gres 45°", "Lavello integrato", "Zero fessure"],
+    image: {
+      src: "/media/showroom/showroom-7.jpg",
+      alt: "Dettaglio costruttivo piano in gres e lavello integrato in showroom",
+      width: 1600,
+      height: 1066,
+      credit: PROGGECTA,
+    },
+    featured: false,
+  },
+  {
+    id: "cucina-showroom-bicolore",
+    title: "Cucina bicolore moderna con pensili sospesi",
+    category: "cucine",
+    categoryLabel: "Cucine sartoriali",
+    description:
+      "Contrasto cromatico tra basi materiche antracite e pensili chiari a giorno. Soluzione pensata per allargare la percezione visiva degli spazi e offrire massima capienza contenitiva.",
+    tags: ["Showroom dal vivo", "Bicolore", "Gole a gola", "Pensili a giorno"],
+    image: {
+      src: "/media/showroom/showroom-11.jpg",
+      alt: "Cucina bicolore con pensili a giorno allestita in showroom Proggecta",
+      width: 1600,
+      height: 1066,
+      credit: PROGGECTA,
+    },
+    featured: false,
+  },
+  {
+    id: "cucina-showroom-isola-scultorea",
+    title: "Isola con piano cottura a induzione e cappa integrata",
+    category: "cucine",
+    categoryLabel: "Cucine sartoriali",
+    description:
+      "Isola centrale completa di piano cottura aspirante a filo top e bancone snack a sbalzo. La cappa integrata elimina ogni ingombro visivo a soffitto, lasciando libera la vista sull'ambiente living.",
+    tags: ["Showroom dal vivo", "Piano aspirante", "Bancone snack", "Design puro"],
+    image: {
+      src: "/media/showroom/showroom-12.jpg",
+      alt: "Isola sartoriale con piano aspirante allestita in showroom Proggecta",
+      width: 1280,
+      height: 1600,
+      credit: PROGGECTA,
+    },
+    featured: false,
+  },
 
   // ───────────── OPEN SPACE & LIVING ─────────────
   {
@@ -205,6 +290,40 @@ export const solutionsGalleryData: SolutionItem[] = [
       width: 1920,
       height: 1316,
       credit: "© Zamagna",
+    },
+    featured: false,
+  },
+  {
+    id: "living-showroom-madia",
+    title: "Allestimento living e parete attrezzata coordinata in showroom",
+    category: "open-space",
+    categoryLabel: "Open space & Living",
+    description:
+      "Composizione giorno dal vivo nello showroom di Nocera Inferiore: boiserie a doghe con vani contenitivi a specchio e madia sospesa. Un unico progetto armonico che dialoga con la cucina per stile e materiali.",
+    tags: ["Showroom dal vivo", "Living coordinato", "Madia sospesa", "Boiserie"],
+    image: {
+      src: "/media/showroom/showroom-4.jpg",
+      alt: "Zona living e soggiorno contemporaneo allestito nello showroom Proggecta",
+      width: 1600,
+      height: 1067,
+      credit: PROGGECTA,
+    },
+    featured: true,
+  },
+  {
+    id: "materioteca-showroom-dal-vivo",
+    title: "La Materioteca Proggecta dal vivo",
+    category: "open-space",
+    categoryLabel: "Open space & Living",
+    description:
+      "Il cuore della progettazione a Nocera Inferiore: centinaia di campionari reali di top in gres, legni nobili, laccature e maniglie da accostare dal vivo sotto luce naturale prima di decidere.",
+    tags: ["Showroom dal vivo", "Materioteca", "Campionari reali", "Gres & Marmi"],
+    image: {
+      src: "/media/showroom/showroom-2.jpg",
+      alt: "Campionari e materioteca reale nello showroom Proggecta a Nocera Inferiore",
+      width: 1600,
+      height: 1067,
+      credit: PROGGECTA,
     },
     featured: false,
   },
@@ -355,6 +474,40 @@ export const solutionsGalleryData: SolutionItem[] = [
     featured: false,
     objectPosition: "72% center",
   },
+  {
+    id: "notte-showroom-camera",
+    title: "Camera matrimoniale contemporanea allestita in showroom",
+    category: "notte",
+    categoryLabel: "Zona notte & Cabine",
+    description:
+      "Allestimento dal vivo a Nocera Inferiore: letto con testiera imbottita sartoriale, comodini sospesi e armadio scorrevole con ante complanari in finitura calda e illuminazione LED integrata.",
+    tags: ["Showroom dal vivo", "Testiera imbottita", "Armadio complanare", "Sartoriale"],
+    image: {
+      src: "/media/showroom/showroom-8.jpg",
+      alt: "Camera da letto contemporanea allestita in showroom Proggecta",
+      width: 1600,
+      height: 1066,
+      credit: PROGGECTA,
+    },
+    featured: true,
+  },
+  {
+    id: "notte-showroom-cameretta-soppalco",
+    title: "Cameretta evolutiva con soppalco e scrivania sagomata",
+    category: "notte",
+    categoryLabel: "Zona notte & Cabine",
+    description:
+      "Composizione per ragazzi Moretti Compact allestita in showroom: soppalco di sicurezza con protezione anti-caduta, cabina armadio angolare e scrivania ergonomica al millimetro.",
+    tags: ["Showroom dal vivo", "Moretti Compact", "Soppalco", "Salvaspazio"],
+    image: {
+      src: "/media/showroom/showroom-9.jpg",
+      alt: "Cameretta per ragazzi allestita dal vivo nello showroom Proggecta",
+      width: 1600,
+      height: 1066,
+      credit: PROGGECTA,
+    },
+    featured: false,
+  },
 
   // ───────────── TAVOLI, SEDIE & ACCESSORI ─────────────
   {
@@ -439,6 +592,23 @@ export const solutionsGalleryData: SolutionItem[] = [
       width: 780,
       height: 516,
       credit: "© Signorini & Coco",
+    },
+    featured: false,
+  },
+  {
+    id: "accessori-showroom-tavolo-sedie",
+    title: "Tavolo allungabile in ceramica e sedie rivestite",
+    category: "sedie-accessori",
+    categoryLabel: "Tavoli, Sedie & Accessori",
+    description:
+      "Tavolo allungabile Zamagna con piano in ceramica antigraffio e calore, abbinato a sedie con rivestimento idrorepellente. Da toccare e provare dal vivo in showroom a Nocera Inferiore.",
+    tags: ["Showroom dal vivo", "Zamagna", "Tavolo allungabile", "Ceramica"],
+    image: {
+      src: "/media/showroom/showroom-10.jpg",
+      alt: "Tavolo allungabile e sedie allestite in showroom Proggecta",
+      width: 1600,
+      height: 1067,
+      credit: PROGGECTA,
     },
     featured: false,
   },

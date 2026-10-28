@@ -1,0 +1,36 @@
+{
+  "domains": {
+    "primary": "proggecta.it",
+    "secondary": "proggecta.com",
+    "registrar": "Aruba",
+    "dns_target": "Vercel (Next.js 15)",
+    "mail_service": "Aruba Webmail (5 caselle: alfonsomalafronte@, Ufficiovendite1@, Ufficiovendite2@, Info@, Amministrazione@)"
+  },
+  "tracking": {
+    "gtm_id": "GTM-MPWSMPF",
+    "meta_pixel_id": "908097353622896",
+    "n8n_webhook_url": "https://n8n.creativiastudio.com/webhook/47ff0a28-48b5-427e-8173-5e932468dfb3",
+    "n8n_workflow_id": "BN5JWrvb0CeWmif9"
+  },
+  "credentials": {
+    "aruba": {
+      "username": "19250633@aruba.it",
+      "password": "Alesamlor123@",
+      "services": "Registrar domini proggecta.it e proggecta.com + hosting Linux Easy (solo DNS e Mail)"
+    },
+    "swipeone_crm": {
+      "client": "proggecta",
+      "api_key": "sp_cab49fe6a9bd45c1909f988dae68f8ed"
+    },
+    "github": {
+      "repo": "https://github.com/CreativiaStudio/proggecta",
+      "branch": "main"
+    }
+  },
+  "architecture": {
+    "hosting": "Vercel",
+    "frontend": "Next.js 15 (React / Tailwind / Framer Motion)",
+    "cms_db": "Nessun lock-in: dati strutturati in blueprint/src/data/*.ts",
+    "dns_strategy": "Aruba DNS A/CNAME puntati a Vercel, record MX invariati per posta Aruba"
+  }
+}

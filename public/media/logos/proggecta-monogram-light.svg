@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 104" width="88" height="104" fill="none">
+  <!-- Monogramma P Proggecta (Bianco Satinato & Ocra) -->
+  <path d="M6 8 C6 4.7 8.7 2 12 2 L56 2 C72.5 2 84 13.5 84 30 C84 46.5 72.5 58 56 58 L38 58 L38 68 L72 68 C74.2 68 76 69.8 76 72 L76 98 C76 100.2 74.2 102 72 102 L64 102 L64 88 L46 88 L46 102 L38 102 L38 74 L24 74 L24 102 L6 102 Z" fill="#FFFFFF" />
+  <path d="M24 16 L54 16 C63 16 68 21.5 68 30 C68 38.5 63 44 54 44 L38 44 L38 74 L24 74 Z" fill="#FEC93B" />
+  <rect x="46" y="68" width="18" height="20" rx="1" fill="#FFFFFF" fill-opacity="0.15" />
+</svg>

@@ -1,7 +1,7 @@
 # PARTE A — Strategia di conversione e copywriting
 
 **Progetto:** Proggecta, piattaforma web Next.js
-**Obiettivo unico di conversione:** prenotazione della consulenza in showroom a Scafati
+**Obiettivo unico di conversione:** prenotazione della consulenza in showroom a Nocera Inferiore
 **Fonti del copy:** questo documento (pagine) + `blueprint/src/data/*.ts` (brand, FAQ, metodo, qualità, landing per ambiente). In caso di modifiche, i file `.ts` sono la versione di riferimento per lo sviluppo.
 
 ---
@@ -28,7 +28,7 @@ Proggecta non vende mobili. Vende **un progetto**: la casa del cliente, misurata
 1. **Promessa emotiva:** una casa cucita sulla tua vita, senza compromessi.
 2. **Meccanismo unico:** metodo in 4 step (ascolto, rilievo laser, render 3D, montaggio interno) + selezione multi-brand.
 3. **Prova razionale:** multistrato vs truciolare, ferramenta certificata, filiera Poziello & Riccardi.
-4. **Prova tangibile:** 2.000 mq di showroom, da toccare con mano.
+4. **Prova tangibile:** 500 mq di showroom, da toccare con mano.
 5. **Rimozione del rischio:** consulenza e prima proposta gratuite, render prima dell'ordine, preventivo voce per voce, rate.
 6. **Invito all'azione:** prenota la consulenza (con data e fascia oraria già scelte).
 
@@ -80,12 +80,12 @@ Il primo motivo per cui una landing da Google Ads non converte è che l'utente c
 | 4 | **Contract** | Search | Budget dedicato, geo allargato (Costiera, Penisola Sorrentina, Napoli) |
 | 5 | **Performance Max — Showroom** | PMax | Gruppi di asset per ambiente, segnali di pubblico da lista clienti + visitatori del sito. Avviare **dopo** aver raccolto le prime 30–50 conversioni sulla Search. |
 
-**Geotargeting:** raggio 25–30 km da Scafati, impostazione "Presenza: persone che si trovano o si trovano regolarmente" (non "interesse"). Contract con raggio esteso.
+**Geotargeting:** raggio 25–30 km da Nocera Inferiore, impostazione "Presenza: persone che si trovano o si trovano regolarmente" (non "interesse"). Contract con raggio esteso.
 **Estensione di località:** richiede il Google Business Profile, oggi in standby. Va attivato appena montate le insegne: senza, si perdono l'estensione località e le campagne orientate alla visita in negozio.
 
 ### 1.3 Keyword seed (da espandere con Keyword Planner)
 
-**Cucine:** cucine su misura, cucine su misura Scafati / Pompei / Salerno / Nocera, cucine artigianali, cucina con isola su misura, showroom cucine Salerno, cucine moderne su misura
+**Cucine:** cucine su misura, cucine su misura Nocera Inferiore / Pompei / Salerno / Nocera, cucine artigianali, cucina con isola su misura, showroom cucine Salerno, cucine moderne su misura
 **Camerette:** camerette su misura, camerette per due figli, camerette salvaspazio, camerette Salerno, camerette con letto a soppalco
 **Notte:** cabina armadio su misura, armadio su misura, armadio per mansarda, armadio scorrevole su misura
 **Casa completa:** arredamento casa completa, arredare casa nuova, interior designer Scafati, showroom arredamento Salerno, arredamento su misura Napoli
@@ -100,8 +100,8 @@ Il primo motivo per cui una landing da Google Ads non converte è che l'utente c
 
 | # | Titolo | Car. |
 |---|---|---|
-| 1 | Cucine Su Misura a Scafati | 26 |
-| 2 | Showroom di 2.000 mq | 20 |
+| 1 | Cucine Su Misura a Nocera Inferiore | 26 |
+| 2 | Showroom di 500 mq | 20 |
 | 3 | Render 3D Gratuito | 18 |
 | 4 | Rilievo Laser al Millimetro | 27 |
 | 5 | Prenota la Tua Consulenza | 25 |
@@ -114,20 +114,20 @@ Il primo motivo per cui una landing da Google Ads non converte è che l'utente c
 | 12 | Pagamenti Rateali | 17 |
 | 13 | Zero Sorprese in Cantiere | 25 |
 | 14 | Vieni a Toccare i Materiali | 27 |
-| 15 | Proggecta Scafati | 17 |
+| 15 | Proggecta Nocera Inferiore | 17 |
 
 Bloccare (pin) il titolo 1 in posizione 1 solo se la percentuale di impressioni risulta bassa; altrimenti lasciare libero.
 
 **Descrizioni (max 90 caratteri):**
 
 1. Progettiamo la tua cucina al millimetro: rilievo laser, render 3D e montaggio interno. *(85)*
-2. 2.000 mq di showroom a Scafati. Prenota una consulenza gratuita con l'interior designer. *(88)*
+2. 500 mq di showroom a Nocera Inferiore. Prenota una consulenza gratuita con l'interior designer. *(88)*
 3. Casse in multistrato: non gonfiano con l'acqua. Qualità che dura, senza compromessi. *(83)*
 4. Moretti Compact, Mercantini, Zamagna, Smeg: i migliori marchi in un unico progetto. *(83)* ← *solo con autorizzazione dei marchi*
 
 **Asset:** sitelink (Progettazione sartoriale · Qualità costruttiva · Camerette · Showroom & orari), callout (Consulenza gratuita · Parcheggio riservato · Render 3D · Montaggio interno · Rate disponibili), snippet strutturato "Marchi", estensione di chiamata, modulo lead **disattivato** (vogliamo che vedano la landing).
 
-Per gli altri gruppi si sostituiscono i titoli 1, 4 e 6 con la keyword dell'ambiente (es. "Camerette Su Misura Scafati", "Cabine Armadio Su Misura", "Camerette Salvaspazio").
+Per gli altri gruppi si sostituiscono i titoli 1, 4 e 6 con la keyword dell'ambiente (es. "Camerette Su Misura Nocera Inferiore", "Cabine Armadio Su Misura", "Camerette Salvaspazio").
 
 ### 1.5 Conversioni e ottimizzazione
 
@@ -157,7 +157,7 @@ Ordine delle sezioni pensato per lo scroll da mobile (90% del traffico Ads). La 
 
 ### 2.1 Hero
 
-- **Eyebrow:** Studio di progettazione d'interni · Showroom di 2.000 mq a Scafati
+- **Eyebrow:** Studio di progettazione d'interni · Showroom di 500 mq a Nocera Inferiore
 - **H1 (versione A, consigliata):** La tua casa non è standard. I tuoi mobili nemmeno.
 - **H1 (versione B per A/B test):** Basta mobili a misura di catalogo. Progettiamo la tua casa al millimetro.
 - **H1 (versione C, più "keyword"):** Arredamento su misura, progettato al millimetro sulla tua vita.
@@ -170,7 +170,7 @@ Ordine delle sezioni pensato per lo scroll da mobile (90% del traffico Ads). La 
 1. Consulenza e render 3D gratuiti, senza impegno
 2. Un interior designer dedicato solo a te
 3. Parcheggio riservato in showroom
-4. 2.000 mq di ambienti da toccare con mano
+4. 500 mq di ambienti da toccare con mano
 
 **Note di design:** foto o video a tutto schermo di un ambiente reale (non un render freddo). Su mobile, H1 + sottotitolo + CTA visibili **senza scroll**. Overlay scuro sfumato in basso per la leggibilità.
 
@@ -215,8 +215,8 @@ Ordine delle sezioni pensato per lo scroll da mobile (90% del traffico Ads). La 
 
 ### 2.7 Showroom experience
 
-- **Eyebrow:** Showroom di Scafati
-- **H2:** 2.000 mq per smettere di immaginare e iniziare a toccare.
+- **Eyebrow:** showroom di Nocera Inferiore
+- **H2:** 500 mq per smettere di immaginare e iniziare a toccare.
 - **Testo:** Le foto aiutano a sognare, ma una cucina si sceglie aprendo i cassetti, un divano sedendosi, un armadio toccando le ante. Nel nostro showroom trovi ambienti completi allestiti, campionari di materiali, top e finiture, e un'area progettazione dove vedere il tuo render su grande schermo.
 - **Elenco "Cosa trovi in visita":**
   - Ambienti completi: cucine, living, zona notte, camerette
@@ -267,7 +267,7 @@ Tre pulsanti: **Chiama** · **WhatsApp** · **Prenota** (quest'ultimo pieno, col
 
 ## 3. `/progettazione-sartoriale`
 
-**SEO title:** Progettazione Sartoriale d'Interni a Scafati | Proggecta
+**SEO title:** Progettazione Sartoriale d'Interni a Nocera Inferiore | Proggecta
 **Meta description:** Progettiamo cucine, armadi e camerette al millimetro: rilievo laser, render 3D fotorealistico e soluzioni per pilastri, nicchie e mansarde. Consulenza gratuita.
 
 ### Hero
@@ -437,13 +437,13 @@ FAQ: `contract-tempi`, `contract-architetti`, `contract-materiali`.
 
 ## 7. `/showroom-contatti`
 
-**SEO title:** Showroom Arredamento a Scafati (SA) | Orari e Contatti | Proggecta
-**Meta description:** 2.000 mq di showroom a Scafati: cucine, zona notte, camerette e living. Parcheggio riservato. Prenota la tua consulenza gratuita o scrivici su WhatsApp.
+**SEO title:** Showroom Arredamento a Nocera Inferiore (SA) | Orari e Contatti | Proggecta
+**Meta description:** 500 mq di showroom a Nocera Inferiore: cucine, zona notte, camerette e living. Parcheggio riservato. Prenota la tua consulenza gratuita o scrivici su WhatsApp.
 
 ### Hero
 - **Eyebrow:** Showroom Proggecta · Scafati (SA)
-- **H1:** Ti aspettiamo a Scafati. Il caffè lo offriamo noi.
-- **Sottotitolo:** 2.000 mq di ambienti da vivere, un interior designer dedicato e il tempo che ti serve per scegliere con calma.
+- **H1:** Ti aspettiamo a Nocera Inferiore. Il caffè lo offriamo noi.
+- **Sottotitolo:** 500 mq di ambienti da vivere, un interior designer dedicato e il tempo che ti serve per scegliere con calma.
 - **CTA:** Prenota la visita · **WhatsApp** (pulsante verde) · **Chiama**
 
 ### Sezione 1 — Com'è una visita (timeline)
@@ -460,7 +460,7 @@ Piantina (anche una foto) · foto degli ambienti · misure indicative · immagin
 - **Mappa:** immagine statica con pulsante "Carica mappa interattiva" (la mappa di Google si carica solo dopo il clic: velocità e privacy, vedi Parte C).
 - **Come arrivare:** `siteConfig.showroom.directions`
 - **Parcheggio:** `siteConfig.showroom.parking`
-- **Paragrafo locale (SEO):** *Siamo a Scafati, nel cuore dell'Agro Nocerino-Sarnese, a pochi minuti da Pompei, Angri, Sant'Antonio Abate, San Marzano sul Sarno, Poggiomarino, Boscoreale, Sarno, Nocera, Pagani, Castellammare di Stabia e Torre Annunziata.*
+- **Paragrafo locale (SEO):** *Siamo a Nocera Inferiore, nel cuore dell'Agro Nocerino-Sarnese, a pochi minuti da Pompei, Angri, Sant'Antonio Abate, San Marzano sul Sarno, Poggiomarino, Boscoreale, Sarno, Nocera, Pagani, Castellammare di Stabia e Torre Annunziata.*
 
 ### Sezione 4 — Orari
 Tabella da `siteConfig.openingHours` + stato dinamico "Aperto ora / Apre alle…" (calcolato lato client, fuso Europe/Rome).

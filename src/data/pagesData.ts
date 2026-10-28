@@ -55,10 +55,10 @@ export const homeCopy = {
     },
   },
   founder: {
-    name: "Alfonso Malafronte",
-    role: "Fondatore di Proggecta",
+    name: "Atelier Proggecta",
+    role: "Team Progettazione Sartoriale",
     quote:
-      "Ho fondato Proggecta perché ero stanco di vedere case arredate a forza di compromessi. Qui ogni progetto lo seguiamo dall'inizio alla fine, e se qualcosa non va, il numero da chiamare è il mio.",
+      "Ogni casa ha le sue misure reali e la sua storia. Nel nostro showroom a Nocera Inferiore curiamo ogni progetto dall'ascolto iniziale al montaggio finale, con maestranze interne e un referente dedicato.",
   },
   contract: {
     eyebrow: "Divisione Contract",

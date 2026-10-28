@@ -1,0 +1,41 @@
+{
+  "guidelines": {
+    "donts": [
+      "NON dire mai 'Ciesse è diventata Proggecta' o 'nuova gestione' o 'fusione' (nessuna continuità societaria, rischio legale per vecchi ordini/garanzie).",
+      "NON nominare mai i concorrenti per nome (parlare per categorie: il mobilificio commerciale, il truciolare nobilitato).",
+      "NON usare toni da discount o svendita ('prezzi stracciati', 'liquidazione totale', 'fuori tutto').",
+      "NON promettere sconti finti o urgenze artefatte: il posizionamento è sartoriale d'eccellenza accessibile.",
+      "NON usare foto o claim in prima persona di Alfonso ('ci metto la faccia', 'il numero da chiamare è il mio') nella fase ibrida di transizione con Ciesse: la comunicazione online sul sito deve essere istituzionale a nome dell'Atelier e del Team Progettazione."
+    ],
+    "dos": [
+      "Spingere sul metodo in 4 step: Ascolto & Studio Spazi -> Rilievo Laser al millimetro -> Render 3D Fotorealistico -> Montaggio interno a regola d'arte.",
+      "Valorizzare il differenziale tecnico: scocche e casse in multistrato marino/fenolico resistenti all'acqua vs truciolare commerciale, ferramenta certificata per 100.000 aperture, top in gres/Fenix.",
+      "Comunicazione a nome dell'Atelier e del Team di Progettazione Sartoriale Proggecta (presenza in prima persona di Alfonso sospesa per la fase ibrida con Ciesse).",
+      "Obiettivo unico di conversione: prenotazione consulenza gratuita in showroom a Nocera Inferiore (località Fosso Imperatore, circa 500 mq) con conferma entro 1-2 ore via WhatsApp/telefono."
+    ],
+    "replacements": [
+      { "banned": "fabbrica di cucine", "replacement": "studio di progettazione sartoriale e distributore multi-brand", "reason": "Proggecta seleziona le migliori fabbriche italiane per ogni ambiente" },
+      { "banned": "vendita mobili", "replacement": "progettazione d'interni su misura", "reason": "Posizionamento sartoriale" },
+      { "banned": "truciolare nobilitato", "replacement": "scocche in multistrato indeformabili all'acqua", "reason": "Differenziale tecnico costruttivo" }
+    ],
+    "claims": [
+      "La tua casa non è standard. I tuoi mobili nemmeno.",
+      "Nessuna fabbrica è la migliore in tutto. Per questo le abbiamo scelte una per una.",
+      "Dal primo caffè all'ultima vite, un solo metodo. Nessuna sorpresa.",
+      "Quello che non vedi è quello che fa durare una cucina trent'anni."
+    ],
+    "tone": "Autorevole, sartoriale, caldo e concreto. Si dà del tu al cliente. Frasi brevi, zero tecnicismi incomprensibili, focus su benefici tangibili e riprova.",
+    "palette": [
+      { "name": "Blu Ottanio Istituzionale", "hex": "#044564", "role": "Brand Primario (Logo)" },
+      { "name": "Oro Ocra Accento", "hex": "#FEC93B", "role": "Accento CTA & Dettagli (Logo)" },
+      { "name": "Deep Petrol Black", "hex": "#0B1A22", "role": "Fondi Scuri Luxury" },
+      { "name": "Sabbia Caldo Materico", "hex": "#F2EADB", "role": "Sfondo Chiaro & Sezioni" }
+    ],
+    "contacts": {
+      "referente": "Alfonso Malafronte",
+      "email": "alfonsomalafronte@proggecta.it",
+      "telefono": "+39 333 125 2570",
+      "indirizzo": "Showroom Fosso Imperatore Lotto 14, Nocera Inferiore (SA) — circa 500 mq"
+    }
+  }
+}

@@ -9,7 +9,6 @@ import { SolutionsGallery } from "@/components/sections/SolutionsGallery";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { QualityComparison } from "@/components/sections/QualityComparison";
 import { ShowroomExperience } from "@/components/sections/ShowroomExperience";
-import { FounderNote } from "@/components/sections/FounderNote";
 import { ContractTeaser } from "@/components/sections/ContractTeaser";
 import { BookingForm } from "@/components/forms/BookingForm";
 import { FaqAccordion } from "@/components/sections/FaqAccordion";
@@ -88,13 +87,6 @@ export default function HomePage() {
         title={homeCopy.showroom.title}
         body={homeCopy.showroom.body}
         cta={homeCopy.showroom.cta}
-      />
-
-      {/* 2.8 Ci Metto la Faccia: Fondatore Alfonso Malafronte */}
-      <FounderNote
-        name={homeCopy.founder.name}
-        role={homeCopy.founder.role}
-        quote={homeCopy.founder.quote}
       />
 
       {/* 2.9 Contract & Hospitality Teaser */}

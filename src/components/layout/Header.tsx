@@ -64,16 +64,23 @@ export function Header() {
     >
       <Container className="flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <span
+        <Link href="/" className="flex items-center gap-2 group" aria-label="Proggecta Home">
+          <img
+            src="/media/logos/proggecta-horizontal-color.svg"
+            alt="Proggecta — Studio di Progettazione"
             className={cn(
-              "font-serif text-2xl sm:text-3xl font-semibold tracking-tight transition-colors",
-              isScrolled ? "text-[#1f1b16]" : "text-white drop-shadow-xs"
+              "h-7 sm:h-8 w-auto object-contain transition-all duration-300",
+              isScrolled ? "block" : "hidden"
             )}
-          >
-            Proggecta
-          </span>
-          <span className="w-1.5 h-1.5 rounded-full bg-[#8a5a32] mt-1" />
+          />
+          <img
+            src="/media/logos/proggecta-horizontal-light.svg"
+            alt="Proggecta — Studio di Progettazione"
+            className={cn(
+              "h-7 sm:h-8 w-auto object-contain transition-all duration-300 drop-shadow-xs",
+              isScrolled ? "hidden" : "block"
+            )}
+          />
         </Link>
 
         {/* Desktop Nav */}

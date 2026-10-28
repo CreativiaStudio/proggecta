@@ -13,11 +13,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 pb-12">
           {/* Colonna 1: Brand & Posizionamento */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="font-serif text-3xl font-semibold tracking-tight text-white">
-                Proggecta
-              </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#8a5a32] mt-1" />
+            <div className="flex items-center gap-2 mb-5">
+              <img
+                src="/media/logos/proggecta-horizontal-light.svg"
+                alt="Proggecta"
+                className="h-8 w-auto object-contain"
+              />
             </div>
             <p className="text-sm text-[#d9cfc1] leading-relaxed mb-6">
               Studio di progettazione sartoriale d'interni e distributore multi-brand d'eccellenza.

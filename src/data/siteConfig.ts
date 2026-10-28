@@ -24,9 +24,9 @@ export const siteConfig = {
   },
 
   showroom: {
-    sizeSqm: 600,
+    sizeSqm: 500,
     parking: "Parcheggio privato riservato ai clienti",
-    directions: "Località Fosso Imperatore (Lotto 14), a pochi minuti dall'uscita autostradale",
+    directions: "Località Fosso Imperatore (Lotto 14), Nocera Inferiore",
   },
 
   contacts: {
