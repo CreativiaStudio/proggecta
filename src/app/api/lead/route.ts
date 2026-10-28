@@ -107,7 +107,7 @@ export async function POST(req: NextRequest) {
       const timeoutId = setTimeout(() => controller.abort(), 8000);
 
       try {
-        await fetch(webhookUrl, {
+        const response = await fetch(webhookUrl, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -116,11 +116,17 @@ export async function POST(req: NextRequest) {
           body: JSON.stringify(payload),
           signal: controller.signal,
         });
+
+        if (!response.ok) {
+          console.error("Webhook forwarding non-OK response:", response.status);
+        }
       } catch (webhookErr) {
         console.error("Webhook forwarding error:", webhookErr);
       } finally {
         clearTimeout(timeoutId);
       }
+    } else {
+      console.warn("ATTENZIONE: N8N_LEAD_WEBHOOK_URL non configurato nelle variabili d'ambiente.");
     }
 
     return NextResponse.json({ ok: true });
