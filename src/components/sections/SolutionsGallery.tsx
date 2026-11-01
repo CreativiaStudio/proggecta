@@ -5,6 +5,7 @@ import Image from "next/image";
 import { AnimatePresence, m } from "framer-motion";
 import {
   ArrowRight,
+  ChevronDown,
   ChevronLeft,
   ChevronRight,
   Maximize2,
@@ -68,8 +69,11 @@ function scrollToBooking() {
     ?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+const INITIAL_VISIBLE_COUNT = 8;
+
 export function SolutionsGallery() {
   const [filter, setFilter] = useState<ActiveFilter>("tutte");
+  const [visibleCount, setVisibleCount] = useState<number>(INITIAL_VISIBLE_COUNT);
   const [activeId, setActiveId] = useState<string | null>(null);
   const [direction, setDirection] = useState<1 | -1>(1);
 
@@ -80,7 +84,11 @@ export function SolutionsGallery() {
         : solutionsGalleryData.filter((i) => i.category === filter),
     [filter]
   );
-  const layout = useMemo(() => computeLayout(items), [items]);
+  const visibleItems = useMemo(
+    () => items.slice(0, visibleCount),
+    [items, visibleCount]
+  );
+  const layout = useMemo(() => computeLayout(visibleItems), [visibleItems]);
   const counts = useMemo(() => {
     const map: Record<string, number> = { tutte: solutionsGalleryData.length };
     for (const i of solutionsGalleryData) {
@@ -180,7 +188,10 @@ export function SolutionsGallery() {
                 key={f.id}
                 type="button"
                 aria-pressed={isActive}
-                onClick={() => setFilter(f.id)}
+                onClick={() => {
+                  setFilter(f.id);
+                  setVisibleCount(INITIAL_VISIBLE_COUNT);
+                }}
                 className={cn(
                   "shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs sm:text-sm font-medium border transition-all duration-300 cursor-pointer whitespace-nowrap",
                   isActive
@@ -207,8 +218,8 @@ export function SolutionsGallery() {
           key={filter}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 sm:grid-flow-dense sm:auto-rows-[220px] lg:auto-rows-[270px] gap-4 sm:gap-5"
         >
-          {items.map((item, idx) => {
-            const { smWide, lgWide } = layout[item.id];
+          {visibleItems.map((item, idx) => {
+            const { smWide, lgWide } = layout[item.id] ?? { smWide: false, lgWide: false };
             return (
               <m.div
                 key={item.id}
@@ -239,6 +250,25 @@ export function SolutionsGallery() {
             );
           })}
         </div>
+
+        {/* Tasto Carica Altro per mostrare 2-3 righe iniziali e ampliare su richiesta */}
+        {visibleCount < items.length && (
+          <div className="mt-10 sm:mt-14 text-center">
+            <button
+              type="button"
+              onClick={() =>
+                setVisibleCount((prev) => Math.min(prev + 8, items.length))
+              }
+              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-white hover:bg-[#1f1b16] text-[#1f1b16] hover:text-white border border-[#d9cfc1] text-sm font-semibold transition-all duration-300 shadow-xs hover:shadow-md cursor-pointer group"
+            >
+              <span>Carica altri progetti</span>
+              <span className="text-xs text-[#8a5a32] group-hover:text-[#c9a06a] tabular-nums font-medium">
+                (mostrati {visibleItems.length} di {items.length})
+              </span>
+              <ChevronDown className="w-4 h-4 text-[#8a5a32] group-hover:text-white group-hover:translate-y-0.5 transition-transform" />
+            </button>
+          </div>
+        )}
 
         {/* Footer: rilievo laser e render 3D */}
         <Reveal>

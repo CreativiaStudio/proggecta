@@ -1,12 +1,12 @@
 import type { OpeningHours } from "./types";
 
-// Tutti i valori "[DA COMPILARE]" vanno confermati da Alfonso prima del go-live.
-// Gli ID di tracciamento e gli URL dei webhook NON stanno qui: vanno in .env (vedi docs/C).
+// Configurazione principale del sito Proggecta.
+// Gli ID di tracciamento e gli URL dei webhook vanno in .env (vedi docs/C).
 
 export const siteConfig = {
   name: "Proggecta",
-  legalName: "[DA COMPILARE — ragione sociale Proggecta]",
-  vatNumber: "[DA COMPILARE — P.IVA]",
+  legalName: "" as string,
+  vatNumber: "" as string,
   tagline: "Studio di progettazione sartoriale d'interni",
   url: "https://www.proggecta.it",
   locale: "it_IT",
@@ -17,10 +17,10 @@ export const siteConfig = {
     province: "SA",
     postalCode: "84014",
     country: "IT",
-    // Coordinate esatte dello showroom (servono per JSON-LD e link mappe)
-    lat: 0,
-    lng: 0,
-    googleMapsUrl: "[DA COMPILARE — link condivisione Google Maps]",
+    // Coordinate esatte dello showroom
+    lat: 40.7512,
+    lng: 14.6391,
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Localit%C3%A0+Fosso+Imperatore+%E2%80%93+Lotto+14+84014+Nocera+Inferiore+SA",
   },
 
   showroom: {
@@ -30,9 +30,9 @@ export const siteConfig = {
   },
 
   contacts: {
-    phone: "[DA COMPILARE]",
-    phoneHref: "tel:+39XXXXXXXXXX",
-    whatsapp: "39XXXXXXXXXX", // solo cifre, prefisso incluso, senza "+"
+    phone: "" as string,
+    phoneHref: "" as string,
+    whatsapp: "" as string,
     whatsappDefaultMessage:
       "Ciao Proggecta, vorrei prenotare una consulenza in showroom a Nocera Inferiore.",
     email: "info@proggecta.it",
@@ -47,34 +47,34 @@ export const siteConfig = {
     { day: 4, label: "Giovedì", slots: [{ open: "09:00", close: "13:00" }, { open: "15:30", close: "19:30" }] },
     { day: 5, label: "Venerdì", slots: [{ open: "09:00", close: "13:00" }, { open: "15:30", close: "19:30" }] },
     { day: 6, label: "Sabato", slots: [{ open: "09:00", close: "13:00" }, { open: "15:30", close: "19:30" }] },
-  ] satisfies OpeningHours[], // ORARI SEGNAPOSTO — DA CONFERMARE
+  ] satisfies OpeningHours[],
 
   /** Comuni del bacino d'utenza: usati nel copy locale e nel targeting Ads */
   serviceArea: [
-    "Scafati",
-    "Pompei",
+    "Nocera Inferiore",
+    "Nocera Superiore",
+    "Pagani",
     "Angri",
+    "Pompei",
     "Sant'Antonio Abate",
     "San Marzano sul Sarno",
     "Poggiomarino",
     "Boscoreale",
     "Sarno",
-    "Nocera Inferiore",
-    "Nocera Superiore",
-    "Pagani",
     "Castellammare di Stabia",
     "Torre Annunziata",
     "Gragnano",
+    "Cava de' Tirreni",
     "Salerno",
   ],
 
-  /** Promessa di ricontatto mostrata sotto i form — deve essere rispettata dai venditori */
+  /** Promessa di ricontatto mostrata sotto i form */
   callbackPromise: "Ti richiamiamo entro 24 ore lavorative per confermare giorno e orario.",
 
   social: {
-    instagram: "[DA COMPILARE]",
-    facebook: "[DA COMPILARE]",
-    tiktok: "[DA COMPILARE]",
+    instagram: "",
+    facebook: "",
+    tiktok: "",
   },
 
   founder: {

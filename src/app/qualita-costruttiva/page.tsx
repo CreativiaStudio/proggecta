@@ -150,7 +150,7 @@ export default function QualitaCostruttivaPage() {
       {/* Final CTA */}
       <FinalCta
         title="Non crederci sulla parola. Vieni a toccare."
-        body="I materiali, le scocche in multistrato e i campionari ti aspettano nello showroom di Scafati."
+        body="I materiali, le scocche in multistrato e i campionari ti aspettano nello showroom di Nocera Inferiore (Località Fosso Imperatore – Lotto 14)."
         cta={{ label: "Prenota la visita in showroom", href: "#prenota" }}
       />
     </>

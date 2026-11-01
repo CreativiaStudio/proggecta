@@ -6,6 +6,12 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const hasRealPhone = Boolean(
+    siteConfig.contacts.phone &&
+      siteConfig.contacts.phone.trim().length > 5 &&
+      !siteConfig.contacts.phone.includes("[") &&
+      !siteConfig.contacts.phone.includes("X")
+  );
 
   return (
     <footer className="bg-[#1f1b16] text-[#faf7f2] pt-20 pb-28 sm:pb-16 border-t border-[#4a443c]/40">
@@ -24,10 +30,16 @@ export function Footer() {
               Studio di progettazione sartoriale d'interni e distributore multi-brand d'eccellenza.
               Cucine, zona notte, camerette e living al millimetro sulla tua vita.
             </p>
-            <div className="text-xs text-[#a3af97] space-y-1">
-              <p>{siteConfig.legalName}</p>
-              <p>P.IVA: {siteConfig.vatNumber}</p>
-            </div>
+            {(siteConfig.legalName || siteConfig.vatNumber) ? (
+              <div className="text-xs text-[#a3af97] space-y-1">
+                {siteConfig.legalName && <p>{siteConfig.legalName}</p>}
+                {siteConfig.vatNumber && <p>P.IVA: {siteConfig.vatNumber}</p>}
+              </div>
+            ) : (
+              <p className="text-xs text-[#a3af97]">
+                Nocera Inferiore (SA) · Showroom & Progettazione Sartoriale
+              </p>
+            )}
           </div>
 
           {/* Colonna 2: Showroom & Orari */}
@@ -45,15 +57,17 @@ export function Footer() {
                   {siteConfig.address.province})
                 </span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-[#8a5a32] shrink-0" />
-                <a
-                  href={siteConfig.contacts.phoneHref}
-                  className="hover:text-white transition-colors"
-                >
-                  {siteConfig.contacts.phone}
-                </a>
-              </li>
+              {hasRealPhone && (
+                <li className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-[#8a5a32] shrink-0" />
+                  <a
+                    href={siteConfig.contacts.phoneHref}
+                    className="hover:text-white transition-colors"
+                  >
+                    {siteConfig.contacts.phone}
+                  </a>
+                </li>
+              )}
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#8a5a32] shrink-0" />
                 <a

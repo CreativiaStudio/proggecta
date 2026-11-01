@@ -3,10 +3,12 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { siteConfig, navBrands } from "@/data/siteConfig";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { Phone, Menu, X, MessageSquare, ChevronDown } from "lucide-react";
+import { Phone, Menu, X, ChevronDown } from "lucide-react";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { cn } from "@/lib/cn";
 import { trackPhoneClick, trackWhatsAppClick } from "@/lib/tracking";
 
@@ -19,6 +21,9 @@ export function Header() {
   const [brandsOpen, setBrandsOpen] = useState(false);
   const [mobileBrandsOpen, setMobileBrandsOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,6 +39,12 @@ export function Header() {
     };
   }, []);
 
+  // Chiudi il menu mobile se cambia pagina
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setBrandsOpen(false);
+  }, [pathname]);
+
   /** Hover morbido: apre subito, chiude con un piccolo ritardo anti-flicker */
   const openBrands = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -45,40 +56,59 @@ export function Header() {
     closeTimer.current = setTimeout(() => setBrandsOpen(false), 160);
   };
 
-  const hasRealPhone =
-    siteConfig.contacts.phone && !siteConfig.contacts.phone.startsWith("[");
+  const hasRealPhone = Boolean(
+    siteConfig.contacts.phone &&
+      siteConfig.contacts.phone.trim().length > 5 &&
+      !siteConfig.contacts.phone.includes("[") &&
+      !siteConfig.contacts.phone.includes("X")
+  );
 
-  const cleanNumber = siteConfig.contacts.whatsapp.replace(/\D/g, "");
-  const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(
+  const cleanWhatsApp = siteConfig.contacts.whatsapp
+    ? siteConfig.contacts.whatsapp.replace(/\D/g, "")
+    : "";
+  const hasWhatsApp = Boolean(
+    cleanWhatsApp.length > 6 && !siteConfig.contacts.whatsapp.includes("X")
+  );
+  const whatsappUrl = `https://wa.me/${cleanWhatsApp}?text=${encodeURIComponent(
     siteConfig.contacts.whatsappDefaultMessage
   )}`;
+
+  // La testata è trasparente SOLO in cima alla homepage (dove c'è il video hero scuro).
+  // Sulle pagine interne e appena si scorre, la testata ha sfondo avorio chiaro opaco con testo scuro e logo a colori.
+  const isTransparent = isHome && !isScrolled;
 
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
-          ? "bg-[#faf7f2]/95 backdrop-blur-md border-b border-[#d9cfc1]/60 py-3 shadow-xs"
-          : "bg-transparent py-5"
+        isTransparent
+          ? "bg-transparent py-5"
+          : "bg-[#faf7f2]/95 backdrop-blur-md border-b border-[#d9cfc1]/60 py-3.5 shadow-xs"
       )}
     >
       <Container className="flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group" aria-label="Proggecta Home">
+        <Link
+          href="/"
+          className="flex items-center gap-2 group"
+          aria-label="Proggecta Home"
+        >
+          {/* Logo a colori (visibile su sfondo chiaro) */}
           <img
             src="/media/logos/proggecta-horizontal-color.svg"
             alt="Proggecta — Studio di Progettazione"
             className={cn(
               "h-7 sm:h-8 w-auto object-contain transition-all duration-300",
-              isScrolled ? "block" : "hidden"
+              isTransparent ? "hidden" : "block"
             )}
           />
+          {/* Logo bianco (visibile solo su hero scura homepage) */}
           <img
             src="/media/logos/proggecta-horizontal-light.svg"
             alt="Proggecta — Studio di Progettazione"
             className={cn(
               "h-7 sm:h-8 w-auto object-contain transition-all duration-300 drop-shadow-xs",
-              isScrolled ? "hidden" : "block"
+              isTransparent ? "block" : "hidden"
             )}
           />
         </Link>
@@ -87,7 +117,9 @@ export function Header() {
         <nav
           className={cn(
             "hidden lg:flex items-center gap-8 text-[15px] font-medium transition-colors relative",
-            isScrolled ? "text-[#4a443c]" : "text-white/90 drop-shadow-xs"
+            isTransparent
+              ? "text-white/90 drop-shadow-xs"
+              : "text-[#4a443c]"
           )}
         >
           {siteConfig.nav.map((item) =>
@@ -104,9 +136,9 @@ export function Header() {
                   aria-expanded={brandsOpen}
                   className={cn(
                     "relative inline-flex items-center gap-1 transition-colors after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 hover:after:w-full after:transition-all",
-                    isScrolled
-                      ? "hover:text-[#8a5a32] after:bg-[#8a5a32]"
-                      : "hover:text-white after:bg-white"
+                    isTransparent
+                      ? "hover:text-white after:bg-white"
+                      : "hover:text-[#8a5a32] after:bg-[#8a5a32]"
                   )}
                 >
                   {item.label}
@@ -174,10 +206,10 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "py-1 relative transition-colors after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#8a5a32] hover:after:w-full after:transition-all",
-                  isScrolled
-                    ? "hover:text-[#8a5a32]"
-                    : "hover:text-white after:bg-white"
+                  "py-1 relative transition-colors after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 hover:after:w-full after:transition-all",
+                  isTransparent
+                    ? "hover:text-white after:bg-white"
+                    : "hover:text-[#8a5a32] after:bg-[#8a5a32]"
                 )}
               >
                 {item.label}
@@ -188,21 +220,23 @@ export function Header() {
 
         {/* Action Buttons */}
         <div className="hidden sm:flex items-center gap-4">
-          {hasRealPhone ? (
+          {hasRealPhone && (
             <a
               href={siteConfig.contacts.phoneHref}
               onClick={() => trackPhoneClick("header")}
               className={cn(
                 "flex items-center gap-2 text-sm font-medium transition-colors px-3 py-2",
-                isScrolled
-                  ? "text-[#1f1b16] hover:text-[#8a5a32]"
-                  : "text-white/90 hover:text-white"
+                isTransparent
+                  ? "text-white/90 hover:text-white"
+                  : "text-[#1f1b16] hover:text-[#8a5a32]"
               )}
             >
               <Phone className="w-4 h-4 text-[#8a5a32]" />
               <span>{siteConfig.contacts.phone}</span>
             </a>
-          ) : (
+          )}
+
+          {hasWhatsApp && (
             <a
               href={whatsappUrl}
               target="_blank"
@@ -210,12 +244,12 @@ export function Header() {
               onClick={() => trackWhatsAppClick("header")}
               className={cn(
                 "flex items-center gap-2 text-sm font-medium transition-colors px-3 py-2",
-                isScrolled
-                  ? "text-[#128c4a] hover:text-[#0e703b]"
-                  : "text-white/90 hover:text-white"
+                isTransparent
+                  ? "text-white/90 hover:text-white"
+                  : "text-[#128c4a] hover:text-[#0e703b]"
               )}
             >
-              <MessageSquare className="w-4 h-4 text-[#128c4a]" />
+              <WhatsAppIcon className="w-4 h-4 fill-current text-[#25D366]" />
               <span>WhatsApp</span>
             </a>
           )}
@@ -231,13 +265,17 @@ export function Header() {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className={cn(
             "lg:hidden p-2 transition-colors focus:outline-none",
-            isScrolled
-              ? "text-[#1f1b16] hover:text-[#8a5a32]"
-              : "text-white hover:text-[#d9cfc1]"
+            isTransparent
+              ? "text-white hover:text-[#d9cfc1]"
+              : "text-[#1f1b16] hover:text-[#8a5a32]"
           )}
           aria-label="Menu"
         >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {mobileMenuOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
         </button>
       </Container>
 
@@ -311,7 +349,7 @@ export function Header() {
             )}
           </nav>
           <div className="flex flex-col gap-3">
-            {hasRealPhone ? (
+            {hasRealPhone && (
               <a
                 href={siteConfig.contacts.phoneHref}
                 onClick={() => {
@@ -323,7 +361,9 @@ export function Header() {
                 <Phone className="w-4 h-4 text-[#8a5a32]" />
                 <span>{siteConfig.contacts.phone}</span>
               </a>
-            ) : (
+            )}
+
+            {hasWhatsApp && (
               <a
                 href={whatsappUrl}
                 target="_blank"
@@ -334,10 +374,11 @@ export function Header() {
                 }}
                 className="flex items-center justify-center gap-2 py-3 rounded-full border border-[#d9cfc1] text-[#128c4a] font-medium bg-[#128c4a]/5"
               >
-                <MessageSquare className="w-4 h-4 text-[#128c4a]" />
+                <WhatsAppIcon className="w-4 h-4 fill-current text-[#25D366]" />
                 <span>Scrivici su WhatsApp</span>
               </a>
             )}
+
             <Button
               href={siteConfig.primaryCta.href}
               onClick={() => setMobileMenuOpen(false)}

@@ -69,7 +69,6 @@ export default function HomePage() {
         eyebrow={homeCopy.problem.eyebrow}
         title={homeCopy.problem.title}
         cards={homeCopy.problem.cards}
-        bridge={homeCopy.problem.bridge}
       />
 
       {/* 2.4 Galleria fotografica delle soluzioni d'arredo */}

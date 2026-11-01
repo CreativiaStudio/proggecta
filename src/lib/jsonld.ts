@@ -6,9 +6,9 @@ export function getStoreJsonLd() {
     "@type": "FurnitureStore",
     "@id": `${siteConfig.url}/#store`,
     name: siteConfig.name,
-    legalName: siteConfig.legalName,
+    legalName: siteConfig.legalName || siteConfig.name,
     url: siteConfig.url,
-    telephone: siteConfig.contacts.phone,
+    ...(siteConfig.contacts.phone ? { telephone: siteConfig.contacts.phone } : {}),
     email: siteConfig.contacts.email,
     priceRange: "€€€",
     address: {

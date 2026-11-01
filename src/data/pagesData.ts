@@ -28,8 +28,6 @@ export const homeCopy = {
   problem: {
     eyebrow: "Perché il mobile standard delude",
     title: "Il mobile standard ti chiede di adattarti. Noi facciamo il contrario.",
-    bridge:
-      "Da Proggecta la casa si progetta una volta sola, da cima a fondo, con una persona sola.",
     cards: [
       {
         title: "Il modulo da 60 che non ci sta.",
@@ -352,6 +350,6 @@ export const showroomCopy = {
     parking: "Ampio parcheggio privato riservato ai clienti all'interno della struttura.",
     directions: "Zona industriale Fosso Imperatore (Lotto 14), facilmente raggiungibile dall'uscita autostradale A3 Nocera Inferiore o A30 Nocera-Pagani.",
     localSeoText:
-      "Siamo a Nocera Inferiore (Località Fosso Imperatore – Lotto 14), nel cuore dell'Agro Nocerino-Sarnese, a pochi minuti da Nocera Superiore, Pagani, Cava de' Tirreni, Angri, Scafati, Pompei, San Valentino Torio, Sarno, Salerno e Napoli.",
+      "Siamo a Nocera Inferiore (Località Fosso Imperatore – Lotto 14), nel cuore dell'Agro Nocerino-Sarnese, a pochi minuti da Nocera Superiore, Pagani, Cava de' Tirreni, Angri, Pompei, San Valentino Torio, Sarno, Salerno e Napoli.",
   },
 };
