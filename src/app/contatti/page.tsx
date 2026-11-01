@@ -22,14 +22,11 @@ export const metadata: Metadata = {
 };
 
 export default function ContattiPage() {
-  // Indirizzo completo e URL Google Maps ufficiali
-  const fullAddress = `${siteConfig.address.street}, ${siteConfig.address.postalCode} ${siteConfig.address.city} (${siteConfig.address.province})`;
-  const mapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(
-    fullAddress
-  )}&output=embed`;
-  const mapsLinkUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    fullAddress
-  )}`;
+  // Coordinate GPS precise del Lotto 14 a Fosso Imperatore (evitano l'aggancio alla vecchia scheda Ciesse Home)
+  const lat = siteConfig.address.lat;
+  const lng = siteConfig.address.lng;
+  const mapsEmbedUrl = `https://maps.google.com/maps?q=${lat},${lng}&hl=it&z=16&output=embed`;
+  const mapsLinkUrl = siteConfig.address.googleMapsUrl;
 
   return (
     <>

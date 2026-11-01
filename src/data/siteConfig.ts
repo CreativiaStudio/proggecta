@@ -17,10 +17,10 @@ export const siteConfig = {
     province: "SA",
     postalCode: "84014",
     country: "IT",
-    // Coordinate esatte dello showroom
-    lat: 40.7512,
-    lng: 14.6391,
-    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Localit%C3%A0+Fosso+Imperatore+%E2%80%93+Lotto+14+84014+Nocera+Inferiore+SA",
+    // Coordinate esatte dello showroom (Lotto 14, Fosso Imperatore)
+    lat: 40.779377,
+    lng: 14.612368,
+    googleMapsUrl: "https://www.google.com/maps/dir/?api=1&destination=40.779377,14.612368",
   },
 
   showroom: {
