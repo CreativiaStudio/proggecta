@@ -6,7 +6,7 @@ export const bookingSchema = z.object({
   formType: z.literal("showroom"),
   ambiente: z.enum(ambienti),
   preferredDate: z.string().min(1), // "YYYY-MM-DD" oppure "flessibile"
-  preferredSlot: z.enum(["mattina", "pomeriggio"]),
+  preferredSlot: z.string().min(1),
   fullName: z.string().trim().min(3, "Scrivi nome e cognome, così sappiamo chi cercare."),
   phone: z
     .string()

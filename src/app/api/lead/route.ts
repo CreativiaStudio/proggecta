@@ -65,8 +65,11 @@ export async function POST(req: NextRequest) {
     const fbp = req.cookies.get("_fbp")?.value || "";
     const fbc = req.cookies.get("_fbc")?.value || "";
 
-    const webhookUrl = process.env.N8N_LEAD_WEBHOOK_URL;
-    const webhookSecret = process.env.N8N_WEBHOOK_SECRET || "";
+    const webhookUrl =
+      process.env.N8N_LEAD_WEBHOOK_URL ||
+      "https://n8n.creativiastudio.com/webhook/proggecta-lead-09871c29";
+    const webhookSecret =
+      process.env.N8N_WEBHOOK_SECRET || "proggecta_lead_secret_2026";
 
     const payload = {
       event_id: validatedData.eventId,
@@ -119,14 +122,26 @@ export async function POST(req: NextRequest) {
 
         if (!response.ok) {
           console.error("Webhook forwarding non-OK response:", response.status);
+          return NextResponse.json(
+            { ok: false, message: "Errore temporaneo nel recapito della notifica. Riprova tra poco." },
+            { status: 502 }
+          );
         }
       } catch (webhookErr) {
         console.error("Webhook forwarding error:", webhookErr);
+        return NextResponse.json(
+          { ok: false, message: "Errore di connessione al server notifiche. Riprova tra poco." },
+          { status: 502 }
+        );
       } finally {
         clearTimeout(timeoutId);
       }
     } else {
       console.warn("ATTENZIONE: N8N_LEAD_WEBHOOK_URL non configurato nelle variabili d'ambiente.");
+      return NextResponse.json(
+        { ok: false, message: "Server non configurato per la ricezione." },
+        { status: 500 }
+      );
     }
 
     return NextResponse.json({ ok: true });
