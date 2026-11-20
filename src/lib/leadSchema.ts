@@ -57,3 +57,41 @@ export const contractSchema = z.object({
 });
 
 export type ContractInput = z.infer<typeof contractSchema>;
+
+export const projectTypes = [
+  "casa_completa",
+  "cucina",
+  "armadi_notte",
+  "living_tavoli",
+  "su_misura_singolo",
+  "cameretta",
+] as const;
+
+export const customLandingSchema = z.object({
+  formType: z.literal("landing_su_misura"),
+  projectType: z.enum(projectTypes),
+  timeline: z.enum(["urgente_30_60", "3_6_mesi", "esplorativo"]).optional(),
+  hasFloorplan: z.enum(["si", "no_serve_rilievo"]).optional(),
+  city: z.string().trim().optional(),
+  preferredDate: z.string().optional(),
+  preferredSlot: z.string().optional(),
+  fullName: z.string().trim().min(3, "Scrivi nome e cognome, così sappiamo chi cercare."),
+  phone: z
+    .string()
+    .trim()
+    .transform((v) => v.replace(/[\s.\-()]/g, ""))
+    .refine((v) => /^(\+39|0039)?3\d{8,9}$|^(\+39|0039)?0\d{5,10}$/.test(v), {
+      message: "Controlla il numero: ci serve per confermarti l'appuntamento.",
+    }),
+  email: z.string().trim().email("Inserisci un'email valida.").optional().or(z.literal("")),
+  notes: z.string().max(1000).optional(),
+  privacy: z.literal(true, { errorMap: () => ({ message: "Per ricontattarti abbiamo bisogno del tuo consenso." }) }),
+  marketing: z.boolean().default(false),
+  website: z.string().max(0).optional(),
+  startedAt: z.number(),
+  eventId: z.string().uuid(),
+  sourcePath: z.string(),
+  attribution: z.record(z.string()).optional(),
+});
+
+export type CustomLandingInput = z.infer<typeof customLandingSchema>;

@@ -24,6 +24,7 @@ export function Header() {
 
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const isLanding = pathname === "/arredamento-su-misura";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,9 +74,9 @@ export function Header() {
     siteConfig.contacts.whatsappDefaultMessage
   )}`;
 
-  // La testata è trasparente SOLO in cima alla homepage (dove c'è il video hero scuro).
-  // Sulle pagine interne e appena si scorre, la testata ha sfondo avorio chiaro opaco con testo scuro e logo a colori.
-  const isTransparent = isHome && !isScrolled;
+  // La testata è trasparente in cima alla homepage e sulla landing /arredamento-su-misura (entrambe hanno hero scura full-bleed).
+  // Appena si scorre, diventa avorio chiaro opaco con testo scuro e logo a colori.
+  const isTransparent = (isHome || isLanding) && !isScrolled;
 
   return (
     <header
@@ -114,109 +115,124 @@ export function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav
-          className={cn(
-            "hidden lg:flex items-center gap-8 text-[15px] font-medium transition-colors relative",
-            isTransparent
-              ? "text-white/90 drop-shadow-xs"
-              : "text-[#4a443c]"
-          )}
-        >
-          {siteConfig.nav.map((item) =>
-            item.href === BRANDS_HREF ? (
-              <div
-                key={item.href}
-                className="py-1"
-                onMouseEnter={openBrands}
-                onMouseLeave={scheduleCloseBrands}
-              >
+        {!isLanding ? (
+          <nav
+            className={cn(
+              "hidden lg:flex items-center gap-8 text-[15px] font-medium transition-colors relative",
+              isTransparent
+                ? "text-white/90 drop-shadow-xs"
+                : "text-[#4a443c]"
+            )}
+          >
+            {siteConfig.nav.map((item) =>
+              item.href === BRANDS_HREF ? (
+                <div
+                  key={item.href}
+                  className="py-1"
+                  onMouseEnter={openBrands}
+                  onMouseLeave={scheduleCloseBrands}
+                >
+                  <Link
+                    href={item.href}
+                    aria-haspopup="true"
+                    aria-expanded={brandsOpen}
+                    className={cn(
+                      "relative inline-flex items-center gap-1 transition-colors after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 hover:after:w-full after:transition-all",
+                      isTransparent
+                        ? "hover:text-white after:bg-white"
+                        : "hover:text-[#8a5a32] after:bg-[#8a5a32]"
+                    )}
+                  >
+                    {item.label}
+                    <ChevronDown
+                      className={cn(
+                        "w-3.5 h-3.5 transition-transform duration-200",
+                        brandsOpen && "rotate-180"
+                      )}
+                    />
+                  </Link>
+
+                  {/* Mega menu Marchi — pannello luxury scuro */}
+                  {brandsOpen && (
+                    <div className="absolute left-1/2 top-full -translate-x-1/2 pt-4">
+                      <div className="w-[720px] bg-[#1f1b16]/95 backdrop-blur-xl border border-white/15 shadow-2xl rounded-2xl p-6 text-white">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#c9a06a] mb-4">
+                          I marchi partner
+                        </p>
+                        <div className="grid grid-cols-4 gap-2.5">
+                          {navBrands.map((brand) => (
+                            <Link
+                              key={brand.href}
+                              href={brand.href}
+                              title={brand.name}
+                              onClick={() => setBrandsOpen(false)}
+                              className="group rounded-xl p-4 hover:bg-white/[0.08] bg-white/[0.03] border border-white/10 hover:border-[#8a5a32]/50 transition-all duration-200 flex items-center justify-center h-16"
+                            >
+                              <div className="flex items-center justify-center gap-2 h-7 w-full overflow-hidden">
+                                {brand.logos.map((src) => (
+                                  <Image
+                                    key={src}
+                                    src={src}
+                                    alt={brand.name}
+                                    width={140}
+                                    height={32}
+                                    unoptimized
+                                    className={cn(
+                                      "brightness-0 invert opacity-75 group-hover:opacity-100 group-hover:scale-105 transition-all duration-200 h-6 w-auto object-contain",
+                                      brand.logos.length > 1
+                                        ? "max-w-[48%]"
+                                        : "max-w-[130px]"
+                                    )}
+                                  />
+                                ))}
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                        <div className="mt-4 pt-4 border-t border-white/10">
+                          <Link
+                            href={BRANDS_HREF}
+                            onClick={() => setBrandsOpen(false)}
+                            className="inline-flex items-center gap-1.5 text-xs font-medium text-[#c9a06a] hover:text-white transition-colors"
+                          >
+                            Scopri tutti i marchi
+                            <ChevronDown className="w-3.5 h-3.5 -rotate-90" />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : (
                 <Link
+                  key={item.href}
                   href={item.href}
-                  aria-haspopup="true"
-                  aria-expanded={brandsOpen}
                   className={cn(
-                    "relative inline-flex items-center gap-1 transition-colors after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 hover:after:w-full after:transition-all",
+                    "py-1 relative transition-colors after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 hover:after:w-full after:transition-all",
                     isTransparent
                       ? "hover:text-white after:bg-white"
                       : "hover:text-[#8a5a32] after:bg-[#8a5a32]"
                   )}
                 >
                   {item.label}
-                  <ChevronDown
-                    className={cn(
-                      "w-3.5 h-3.5 transition-transform duration-200",
-                      brandsOpen && "rotate-180"
-                    )}
-                  />
                 </Link>
-
-                {/* Mega menu Marchi — pannello luxury scuro */}
-                {brandsOpen && (
-                  <div className="absolute left-1/2 top-full -translate-x-1/2 pt-4">
-                    <div className="w-[720px] bg-[#1f1b16]/95 backdrop-blur-xl border border-white/15 shadow-2xl rounded-2xl p-6 text-white">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#c9a06a] mb-4">
-                        I marchi partner
-                      </p>
-                      <div className="grid grid-cols-4 gap-2.5">
-                        {navBrands.map((brand) => (
-                          <Link
-                            key={brand.href}
-                            href={brand.href}
-                            title={brand.name}
-                            onClick={() => setBrandsOpen(false)}
-                            className="group rounded-xl p-4 hover:bg-white/[0.08] bg-white/[0.03] border border-white/10 hover:border-[#8a5a32]/50 transition-all duration-200 flex items-center justify-center h-16"
-                          >
-                            <div className="flex items-center justify-center gap-2 h-7 w-full overflow-hidden">
-                              {brand.logos.map((src) => (
-                                <Image
-                                  key={src}
-                                  src={src}
-                                  alt={brand.name}
-                                  width={140}
-                                  height={32}
-                                  unoptimized
-                                  className={cn(
-                                    "brightness-0 invert opacity-75 group-hover:opacity-100 group-hover:scale-105 transition-all duration-200 h-6 w-auto object-contain",
-                                    brand.logos.length > 1
-                                      ? "max-w-[48%]"
-                                      : "max-w-[130px]"
-                                  )}
-                                />
-                              ))}
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                      <div className="mt-4 pt-4 border-t border-white/10">
-                        <Link
-                          href={BRANDS_HREF}
-                          onClick={() => setBrandsOpen(false)}
-                          className="inline-flex items-center gap-1.5 text-xs font-medium text-[#c9a06a] hover:text-white transition-colors"
-                        >
-                          Scopri tutti i marchi
-                          <ChevronDown className="w-3.5 h-3.5 -rotate-90" />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            ) : (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "py-1 relative transition-colors after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 hover:after:w-full after:transition-all",
-                  isTransparent
-                    ? "hover:text-white after:bg-white"
-                    : "hover:text-[#8a5a32] after:bg-[#8a5a32]"
-                )}
-              >
-                {item.label}
-              </Link>
-            )
-          )}
-        </nav>
+              )
+            )}
+          </nav>
+        ) : (
+          <div className="hidden lg:flex items-center gap-3">
+            <span
+              className={cn(
+                "text-[11px] font-semibold uppercase tracking-[0.16em] px-3.5 py-1.5 rounded-full border transition-colors duration-300",
+                isTransparent
+                  ? "bg-white/10 text-[#e7c799] border-white/20 backdrop-blur-sm"
+                  : "bg-[#efe8dd] text-[#8a5a32] border-[#d9cfc1]/70"
+              )}
+            >
+              Showroom 500 mq · Fosso Imperatore, Nocera Inferiore
+            </span>
+          </div>
+        )}
 
         {/* Action Buttons */}
         <div className="hidden sm:flex items-center gap-4">
@@ -254,29 +270,39 @@ export function Header() {
             </a>
           )}
 
-          <Button href={siteConfig.primaryCta.href} size="sm">
-            {siteConfig.primaryCta.label}
+          <Button href={isLanding ? "#prenota-consulenza" : siteConfig.primaryCta.href} size="sm">
+            {isLanding ? "Richiedi Progetto 3D" : siteConfig.primaryCta.label}
           </Button>
         </div>
 
-        {/* Mobile Hamburger */}
-        <button
-          type="button"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className={cn(
-            "lg:hidden p-2 transition-colors focus:outline-none",
-            isTransparent
-              ? "text-white hover:text-[#d9cfc1]"
-              : "text-[#1f1b16] hover:text-[#8a5a32]"
-          )}
-          aria-label="Menu"
-        >
-          {mobileMenuOpen ? (
-            <X className="w-6 h-6" />
-          ) : (
-            <Menu className="w-6 h-6" />
-          )}
-        </button>
+        {/* Mobile Action / Hamburger */}
+        {!isLanding ? (
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className={cn(
+              "lg:hidden p-2 transition-colors focus:outline-none",
+              isTransparent
+                ? "text-white hover:text-[#d9cfc1]"
+                : "text-[#1f1b16] hover:text-[#8a5a32]"
+            )}
+            aria-label="Menu"
+          >
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
+        ) : (
+          <Button
+            href="#prenota-consulenza"
+            size="sm"
+            className="sm:hidden text-xs px-3.5 py-1.5 font-bold"
+          >
+            Progetto 3D
+          </Button>
+        )}
       </Container>
 
       {/* Mobile Drawer */}

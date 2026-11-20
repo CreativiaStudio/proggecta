@@ -1,16 +1,20 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { siteConfig } from "@/data/siteConfig";
 import { Phone, Calendar } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { trackPhoneClick, trackWhatsAppClick } from "@/lib/tracking";
 
 export function MobileStickyBar() {
+  const pathname = usePathname();
+  const isCustomLanding = pathname === "/arredamento-su-misura";
   const [visible, setVisible] = useState(false);
   const [formInView, setFormInView] = useState(false);
 
   useEffect(() => {
+    if (isCustomLanding) return;
     const handleScroll = () => {
       setVisible(window.scrollY > 400);
     };
@@ -37,9 +41,9 @@ export function MobileStickyBar() {
         observer.unobserve(formElement);
       }
     };
-  }, []);
+  }, [isCustomLanding]);
 
-  if (!visible || formInView) return null;
+  if (isCustomLanding || !visible || formInView) return null;
 
   const hasPhone = Boolean(
     siteConfig.contacts.phone &&
