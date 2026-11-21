@@ -4,9 +4,12 @@ import { siteConfig } from "@/data/siteConfig";
 import { Container } from "@/components/ui/Container";
 import { LandingSuMisuraForm } from "@/components/forms/LandingSuMisuraForm";
 import { HeroBackgroundSlider } from "@/components/landing/HeroBackgroundSlider";
+import { MobileHeroGallery } from "@/components/landing/MobileHeroGallery";
+import { MobileBookingSheet } from "@/components/landing/MobileBookingSheet";
 import {
   AmbientiShowcase,
   SinglePieceTriggerButton,
+  BookingTriggerLink,
 } from "@/components/landing/AmbientiShowcase";
 import { SubstanceScrollShowcase } from "@/components/landing/SubstanceScrollShowcase";
 import { ScrollReveal } from "@/components/landing/ScrollReveal";
@@ -127,7 +130,7 @@ const FAQ_JSON_LD = {
 
 export default function ArredamentoSuMisuraPage() {
   return (
-    <div className="bg-[#faf7f2] text-[#1f1b16] selection:bg-[#8a5a32] selection:text-white">
+    <div className="bg-[#faf7f2] text-[#1f1b16] selection:bg-[#8a5a32] selection:text-white pb-20 lg:pb-0">
       <style>{`
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
@@ -139,9 +142,14 @@ export default function ArredamentoSuMisuraPage() {
       />
 
       {/* =====================================================================
-          1. HERO CINEMATOGRAFICA FULL-BLEED + FORM 4 STEP COMPATTO
+          1A. HERO MOBILE (SOLO < lg): Logo centrato + Gallery orizzontale + Copy
          ===================================================================== */}
-      <section className="relative flex min-h-[700px] lg:min-h-[92vh] items-center overflow-hidden bg-[#120f0c] pt-24 pb-14 sm:pt-28 sm:pb-16">
+      <MobileHeroGallery />
+
+      {/* =====================================================================
+          1B. HERO DESKTOP (SOLO lg+): Full-bleed cinematografica + Form 4 step
+         ===================================================================== */}
+      <section className="hidden lg:flex relative min-h-[92vh] items-center overflow-hidden bg-[#120f0c] pt-28 pb-16">
         <HeroBackgroundSlider />
 
         <Container className="relative z-10">
@@ -432,13 +440,10 @@ export default function ArredamentoSuMisuraPage() {
                   <span>Apri su Google Maps</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
-                <a
-                  href="#prenota-consulenza"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#1f1b16] hover:text-[#8a5a32] transition-colors"
-                >
-                  <span>Prenota la visita</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </a>
+                <BookingTriggerLink
+                  label="Prenota la visita"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#1f1b16] hover:text-[#8a5a32] transition-colors cursor-pointer"
+                />
               </div>
             </ScrollReveal>
           </div>
@@ -511,16 +516,16 @@ export default function ArredamentoSuMisuraPage() {
               Scegli giorno e orario della tua consulenza gratuita in showroom. Portaci una piantina o
               anche solo un&apos;idea: al resto pensiamo noi.
             </p>
-            <a
-              href="#prenota-consulenza"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8a5a32] px-8 py-4 text-sm sm:text-base font-bold text-white shadow-xl transition-transform duration-200 hover:-translate-y-0.5 hover:bg-[#a06b3f]"
-            >
-              <span>Prenota la tua visita gratuita</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
+            <BookingTriggerLink
+              label="Prenota la tua visita gratuita"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8a5a32] px-8 py-4 text-sm sm:text-base font-bold text-white shadow-xl transition-transform duration-200 hover:-translate-y-0.5 hover:bg-[#a06b3f] cursor-pointer"
+            />
           </ScrollReveal>
         </Container>
       </section>
+
+      {/* Sticky inferiore "Progetta con noi" + Bottom Sheet Popup (SOLO MOBILE) */}
+      <MobileBookingSheet source="/arredamento-su-misura" />
     </div>
   );
 }

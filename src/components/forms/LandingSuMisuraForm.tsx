@@ -104,7 +104,13 @@ function formatDateLong(date: string): string {
   });
 }
 
-export function LandingSuMisuraForm({ source = "/arredamento-su-misura" }: { source?: string }) {
+export function LandingSuMisuraForm({
+  source = "/arredamento-su-misura",
+  inModal = false,
+}: {
+  source?: string;
+  inModal?: boolean;
+}) {
   const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
   const [eventId, setEventId] = useState("");
   const [startedAt, setStartedAt] = useState<number>(0);
@@ -352,9 +358,14 @@ export function LandingSuMisuraForm({ source = "/arredamento-su-misura" }: { sou
   return (
     <>
       <div
-        id="prenota-consulenza"
+        id={inModal ? undefined : "prenota-consulenza"}
         ref={cardRef}
-        className="scroll-mt-24 bg-[#faf7f2] rounded-2xl border border-white/15 shadow-2xl overflow-hidden flex flex-col lg:min-h-[540px]"
+        className={cn(
+          "scroll-mt-24 bg-[#faf7f2] overflow-hidden flex flex-col",
+          inModal
+            ? "rounded-none border-0 shadow-none"
+            : "rounded-2xl border border-white/15 shadow-2xl lg:min-h-[540px]"
+        )}
       >
         {/* Header fisso compatto */}
         <div className="bg-[#181410] text-[#faf7f2] px-5 sm:px-6 py-4 border-b border-white/10">
@@ -835,8 +846,8 @@ export function LandingSuMisuraForm({ source = "/arredamento-su-misura" }: { sou
         </div>
       </div>
 
-      {/* Barra sticky mobile (solo quando il form è fuori dallo schermo) */}
-      {!cardVisible && (
+      {/* Barra sticky mobile disattivata (gestita da MobileBookingSheet su /arredamento-su-misura) */}
+      {!inModal && !cardVisible && false && (
         <div
           className="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-[#181410]/95 backdrop-blur-md text-[#faf7f2] border-t border-white/15 px-4 pt-3 flex items-center justify-between gap-3"
           style={{ paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom))" }}

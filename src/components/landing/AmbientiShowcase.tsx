@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { m, useReducedMotion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { openMobileBookingSheet } from "@/components/landing/MobileBookingSheet";
 
 interface AmbienteItem {
   id: string;
@@ -68,13 +69,19 @@ const AMBIENTI: AmbienteItem[] = [
   },
 ];
 
-export function selectProjectAndScroll(projectKey: string) {
+export function selectProjectAndScroll(projectKey?: string) {
   if (typeof window === "undefined") return;
-  window.dispatchEvent(
-    new CustomEvent("proggecta:select-project", {
-      detail: { projectType: projectKey },
-    })
-  );
+  if (window.innerWidth < 1024) {
+    openMobileBookingSheet(projectKey);
+    return;
+  }
+  if (projectKey) {
+    window.dispatchEvent(
+      new CustomEvent("proggecta:select-project", {
+        detail: { projectType: projectKey },
+      })
+    );
+  }
   const target = document.getElementById("prenota-consulenza");
   if (target) {
     target.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -146,6 +153,25 @@ export function SinglePieceTriggerButton({ label }: { label: string }) {
     >
       <span>{label}</span>
       <ArrowUpRight className="h-4 w-4" />
+    </button>
+  );
+}
+
+export function BookingTriggerLink({
+  label,
+  className,
+}: {
+  label: string;
+  className?: string;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={() => selectProjectAndScroll()}
+      className={className}
+    >
+      <span>{label}</span>
+      <ArrowRight className="w-4 h-4 shrink-0" />
     </button>
   );
 }

@@ -82,6 +82,7 @@ export function Header() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        isLanding && "hidden lg:block",
         isTransparent
           ? "bg-transparent py-5"
           : "bg-[#faf7f2]/95 backdrop-blur-md border-b border-[#d9cfc1]/60 py-3.5 shadow-xs"
