@@ -40,6 +40,9 @@ export const metadata: Metadata = {
     description:
       "La tua casa non è standard. I tuoi mobili nemmeno. Progettiamo spazi su misura con cassa in multistrato e selezione multi-brand.",
   },
+  verification: {
+    google: "B9q6pwAu9dfhImAaN4yJnJjUan9Q0FdPnPo2UV2ub9M",
+  },
 };
 
 export default function RootLayout({
@@ -69,6 +72,16 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);`,
         />
       </head>
       <body className="font-sans bg-[#faf7f2] text-[#1f1b16] antialiased min-h-screen flex flex-col selection:bg-[#8a5a32] selection:text-white">
+        {gtmId && (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+            />
+          </noscript>
+        )}
         {gtmId && <GoogleTagManager gtmId={gtmId} />}
 
         {/* Script inizializzazione tracciamento attribution client */}
