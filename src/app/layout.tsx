@@ -6,6 +6,7 @@ import { MotionProvider } from "@/components/ui/MotionProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileStickyBar } from "@/components/layout/MobileStickyBar";
+import { CookieBanner } from "@/components/ui/CookieBanner";
 import { GoogleTagManager } from "@next/third-parties/google";
 import Script from "next/script";
 import "./globals.css";
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Progettiamo e realizziamo cucine, armadiature, camerette e living su misura a Nocera Inferiore con i migliori marchi italiani. Showroom di 2.000 mq. Rilievo laser e render 3D.",
+    "Progettiamo e realizziamo cucine, armadiature, camerette e living su misura a Nocera Inferiore con i migliori marchi italiani. Showroom di 500 mq. Rilievo laser e render 3D.",
   openGraph: {
     type: "website",
     locale: "it_IT",
@@ -47,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const storeJsonLd = getStoreJsonLd();
-  const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "GTM-KJQC6CVQ";
 
   return (
     <html lang="it" className={`${fraunces.variable} ${inter.variable}`}>
@@ -101,6 +102,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);`,
           <main className="flex-1">{children}</main>
           <Footer />
           <MobileStickyBar />
+          <CookieBanner />
         </MotionProvider>
       </body>
     </html>
